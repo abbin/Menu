@@ -14,6 +14,7 @@
 		EDCC64AE1D80578C00D77393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64AC1D80578C00D77393 /* Main.storyboard */; };
 		EDCC64B01D80578C00D77393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64AF1D80578C00D77393 /* Assets.xcassets */; };
 		EDCC64B31D80578C00D77393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64B11D80578C00D77393 /* LaunchScreen.storyboard */; };
+		EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		EDCC64AF1D80578C00D77393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDCC64B21D80578C00D77393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDCC64B41D80578C00D77393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRemoteConfig.h; sourceTree = "<group>"; };
+		EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRemoteConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 			children = (
 				EDCC64A31D80578C00D77393 /* AppDelegate.h */,
 				EDCC64A41D80578C00D77393 /* AppDelegate.m */,
+				EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */,
+				EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */,
 				EDCC64A61D80578C00D77393 /* FirstViewController.h */,
 				EDCC64A71D80578C00D77393 /* FirstViewController.m */,
 				EDCC64A91D80578C00D77393 /* SecondViewController.h */,
@@ -158,6 +163,7 @@
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
 				EDCC64A81D80578C00D77393 /* FirstViewController.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
+				EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
