@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14B6E40C016D050CCE15DAAD /* libPods-Menu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C671398D9CAA8F49267E283 /* libPods-Menu.a */; };
 		EDCC64A21D80578C00D77393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A11D80578C00D77393 /* main.m */; };
 		EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A41D80578C00D77393 /* AppDelegate.m */; };
-		EDCC64A81D80578C00D77393 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A71D80578C00D77393 /* FirstViewController.m */; };
 		EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64AA1D80578C00D77393 /* SecondViewController.m */; };
 		EDCC64AE1D80578C00D77393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64AC1D80578C00D77393 /* Main.storyboard */; };
 		EDCC64B01D80578C00D77393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64AF1D80578C00D77393 /* Assets.xcassets */; };
 		EDCC64B31D80578C00D77393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64B11D80578C00D77393 /* LaunchScreen.storyboard */; };
 		EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */; };
+		EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */; };
+		EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64C11D8064BD00D77393 /* MConstants.m */; };
+		EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */; };
+		EDCC64CB1D8074F800D77393 /* MItemSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64CA1D8074F800D77393 /* MItemSearchTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C671398D9CAA8F49267E283 /* libPods-Menu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Menu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA49599CDE7B22AF41937D6 /* Pods-Menu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Menu/Pods-Menu.debug.xcconfig"; sourceTree = "<group>"; };
+		D5BDAA1F0A6FB7032E25392E /* Pods-Menu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Menu/Pods-Menu.release.xcconfig"; sourceTree = "<group>"; };
 		EDCC649D1D80578C00D77393 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC64A11D80578C00D77393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDCC64A31D80578C00D77393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EDCC64A41D80578C00D77393 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EDCC64A61D80578C00D77393 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		EDCC64A71D80578C00D77393 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		EDCC64A91D80578C00D77393 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		EDCC64AA1D80578C00D77393 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EDCC64AD1D80578C00D77393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +37,14 @@
 		EDCC64B41D80578C00D77393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRemoteConfig.h; sourceTree = "<group>"; };
 		EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRemoteConfig.m; sourceTree = "<group>"; };
+		EDCC64BD1D8061C900D77393 /* MNearbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNearbyTableViewController.h; sourceTree = "<group>"; };
+		EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNearbyTableViewController.m; sourceTree = "<group>"; };
+		EDCC64C01D8064BD00D77393 /* MConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MConstants.h; sourceTree = "<group>"; };
+		EDCC64C11D8064BD00D77393 /* MConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MConstants.m; sourceTree = "<group>"; };
+		EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImageCollectionViewCell.h; sourceTree = "<group>"; };
+		EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImageCollectionViewCell.m; sourceTree = "<group>"; };
+		EDCC64C91D8074F800D77393 /* MItemSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MItemSearchTableViewCell.h; sourceTree = "<group>"; };
+		EDCC64CA1D8074F800D77393 /* MItemSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItemSearchTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +52,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B6E40C016D050CCE15DAAD /* libPods-Menu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26C80B5B07283E04AB8CAD98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C671398D9CAA8F49267E283 /* libPods-Menu.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37F8D395677825C601DA48B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEA49599CDE7B22AF41937D6 /* Pods-Menu.debug.xcconfig */,
+				D5BDAA1F0A6FB7032E25392E /* Pods-Menu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EDCC64941D80578C00D77393 = {
 			isa = PBXGroup;
 			children = (
 				EDCC649F1D80578C00D77393 /* Menu */,
 				EDCC649E1D80578C00D77393 /* Products */,
+				37F8D395677825C601DA48B1 /* Pods */,
+				26C80B5B07283E04AB8CAD98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,10 +99,16 @@
 			children = (
 				EDCC64A31D80578C00D77393 /* AppDelegate.h */,
 				EDCC64A41D80578C00D77393 /* AppDelegate.m */,
+				EDCC64C01D8064BD00D77393 /* MConstants.h */,
+				EDCC64C11D8064BD00D77393 /* MConstants.m */,
 				EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */,
 				EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */,
-				EDCC64A61D80578C00D77393 /* FirstViewController.h */,
-				EDCC64A71D80578C00D77393 /* FirstViewController.m */,
+				EDCC64BD1D8061C900D77393 /* MNearbyTableViewController.h */,
+				EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */,
+				EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */,
+				EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */,
+				EDCC64C91D8074F800D77393 /* MItemSearchTableViewCell.h */,
+				EDCC64CA1D8074F800D77393 /* MItemSearchTableViewCell.m */,
 				EDCC64A91D80578C00D77393 /* SecondViewController.h */,
 				EDCC64AA1D80578C00D77393 /* SecondViewController.m */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
@@ -96,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDCC64B71D80578C00D77393 /* Build configuration list for PBXNativeTarget "Menu" */;
 			buildPhases = (
+				5394839EFA02128B81268055 /* [CP] Check Pods Manifest.lock */,
 				EDCC64991D80578C00D77393 /* Sources */,
 				EDCC649A1D80578C00D77393 /* Frameworks */,
 				EDCC649B1D80578C00D77393 /* Resources */,
+				47F019320D0B26BF6782CE74 /* [CP] Embed Pods Frameworks */,
+				28DCED1C1D65F59A99351B6A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,14 +196,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28DCED1C1D65F59A99351B6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Menu/Pods-Menu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47F019320D0B26BF6782CE74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Menu/Pods-Menu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5394839EFA02128B81268055 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDCC64991D80578C00D77393 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */,
+				EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */,
+				EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */,
+				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
-				EDCC64A81D80578C00D77393 /* FirstViewController.m in Sources */,
+				EDCC64CB1D8074F800D77393 /* MItemSearchTableViewCell.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
 				EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */,
 			);
@@ -273,6 +366,7 @@
 		};
 		EDCC64B81D80578C00D77393 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA49599CDE7B22AF41937D6 /* Pods-Menu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Menu/Info.plist;
@@ -285,6 +379,7 @@
 		};
 		EDCC64B91D80578C00D77393 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5BDAA1F0A6FB7032E25392E /* Pods-Menu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Menu/Info.plist;
@@ -314,6 +409,7 @@
 				EDCC64B91D80578C00D77393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

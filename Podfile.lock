@@ -1,0 +1,25 @@
+PODS:
+  - Bolts/Tasks (1.8.4)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - YangMingShan (1.2.2):
+    - YangMingShan/YMSPhotoPicker (= 1.2.2)
+  - YangMingShan/YMSPhotoPicker (1.2.2)
+
+DEPENDENCIES:
+  - Parse
+  - ParseUI
+  - YangMingShan
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  YangMingShan: aecb8b3099624da18f1d416839a2769d3394a140
+
+PODFILE CHECKSUM: dbd5263d061b35c2c753960314d86ca7315f3cc7
+
+COCOAPODS: 1.0.1
