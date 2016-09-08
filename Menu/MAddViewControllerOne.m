@@ -12,8 +12,9 @@
 #import "MAddViewControllerTwo.h"
 #import "MConstants.h"
 #import "MItemSearchCollectionViewCell.h"
+#import "MCuisinePickerController.h"
 
-@interface MAddViewControllerOne ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,UITextFieldDelegate,UITextViewDelegate>
+@interface MAddViewControllerOne ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,UITextFieldDelegate,UITextViewDelegate,MCuisinePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cuisineHeaderLabel;
@@ -27,6 +28,9 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstrain;
 @property (nonatomic, strong) UICollectionView *itemNameCollectionView;
+
+@property (nonatomic, strong) NSMutableArray *itemsArray;
+@property (nonatomic, strong) NSString *selectedItemName;
 
 @end
 
@@ -75,7 +79,7 @@
         return self.images.count;
     }
     else{
-        return 7;
+        return self.itemsArray.count;
     }
 }
 
@@ -87,7 +91,21 @@
     }
     else{
         MItemSearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MItemSearchCollectionViewCell" forIndexPath:indexPath];
+        if ([[self.itemsArray objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
+            cell.cellLabel.text = [NSString stringWithFormat:@"Add '%@' as a new item",[self.itemsArray objectAtIndex:indexPath.row]];
+            cell.cellDetailedLabel.text = @"";
+        }
         return cell;
+    }
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (collectionView.tag == 1) {
+        if ([[self.itemsArray objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
+            self.selectedItemName = [self.itemsArray objectAtIndex:indexPath.row];
+            [self.nameTextField resignFirstResponder];
+        }
+        
     }
 }
 
@@ -101,6 +119,39 @@
     }
 }
 
+- (IBAction)textFieldEditingChanged:(UITextField *)sender {
+    if (sender.text.length > 0) {
+        if (self.itemsArray == nil) {
+            self.itemsArray = [NSMutableArray array];
+        }
+        [self.itemsArray removeAllObjects];
+        NSString* result = [sender.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        [self.itemsArray addObject:result];
+        [self.itemNameCollectionView reloadData];
+    }
+    else{
+        self.itemsArray = nil;
+        [self.itemNameCollectionView reloadData];
+    }
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField.tag == 1) {
+        MCuisinePickerController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MCuisinePickerController"];
+        vc.delegate = self;
+        [self presentViewController:vc animated:YES completion:nil];
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
+-(void)cuisinePickerController:(MCuisinePickerController *)picker didFinishWithCuisine:(MCuisine *)Cuisine{
+    
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     if (IS_IPHONE_6P) {
         switch (textField.tag) {
@@ -111,13 +162,13 @@
                 }];
             }
                 break;
-            case 1:{
-                self.topConstrain.constant = -183;
-                [UIView animateWithDuration:0.3 animations:^{
-                    [self.view layoutIfNeeded];
-                }];
-            }
-                break;
+//            case 1:{
+//                self.topConstrain.constant = -183;
+//                [UIView animateWithDuration:0.3 animations:^{
+//                    [self.view layoutIfNeeded];
+//                }];
+//            }
+//                break;
             case 2:{
                 self.topConstrain.constant = -193;
                 [UIView animateWithDuration:0.3 animations:^{
@@ -140,13 +191,13 @@
                 }];
             }
                 break;
-            case 1:{
-                self.topConstrain.constant = -203;
-                [UIView animateWithDuration:0.3 animations:^{
-                    [self.view layoutIfNeeded];
-                }];
-            }
-                break;
+//            case 1:{
+//                self.topConstrain.constant = -203;
+//                [UIView animateWithDuration:0.3 animations:^{
+//                    [self.view layoutIfNeeded];
+//                }];
+//            }
+//                break;
             case 2:{
                 self.topConstrain.constant = -233;
                 [UIView animateWithDuration:0.3 animations:^{
@@ -169,13 +220,13 @@
                 }];
             }
                 break;
-            case 1:{
-                self.topConstrain.constant = -258;
-                [UIView animateWithDuration:0.3 animations:^{
-                    [self.view layoutIfNeeded];
-                }];
-            }
-                break;
+//            case 1:{
+//                self.topConstrain.constant = -258;
+//                [UIView animateWithDuration:0.3 animations:^{
+//                    [self.view layoutIfNeeded];
+//                }];
+//            }
+//                break;
             case 2:{
                 self.topConstrain.constant = -344;
                 [UIView animateWithDuration:0.3 animations:^{
@@ -198,13 +249,13 @@
                 }];
             }
                 break;
-            case 1:{
-                self.topConstrain.constant = -278;
-                [UIView animateWithDuration:0.3 animations:^{
-                    [self.view layoutIfNeeded];
-                }];
-            }
-                break;
+//            case 1:{
+//                self.topConstrain.constant = -278;
+//                [UIView animateWithDuration:0.3 animations:^{
+//                    [self.view layoutIfNeeded];
+//                }];
+//            }
+//                break;
             case 2:{
                 self.topConstrain.constant = -364;
                 [UIView animateWithDuration:0.3 animations:^{
@@ -221,6 +272,11 @@
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.tag == 0) {
+        textField.text = self.selectedItemName;
+        self.itemsArray = nil;
+        [self.itemNameCollectionView reloadData];
+    }
     self.topConstrain.constant = 0;
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];

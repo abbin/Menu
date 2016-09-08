@@ -11,5 +11,8 @@
 @implementation MConstants
 
 NSString *const kMItemsClassNameKey                  = @"items";
+NSString *const kMCuisineClassNameKey                = @"cuisines";
+
+NSString *const kMCuisineNameKey                     = @"cuisineName";
 
 @end

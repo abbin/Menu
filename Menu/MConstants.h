@@ -23,5 +23,8 @@
 @interface MConstants : NSObject
 
 FOUNDATION_EXPORT NSString *const kMItemsClassNameKey;
+FOUNDATION_EXPORT NSString *const kMCuisineClassNameKey;
+
+FOUNDATION_EXPORT NSString *const kMCuisineNameKey;
 
 @end
