@@ -87,7 +87,8 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
 
     if (self.allowsMultipleSelection) {
         // Add done button for multiple selections
-        self.doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(finishPickingPhotos:)];
+        self.doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self
+                                                        action:@selector(finishPickingPhotos:)];
         self.doneItem.enabled = NO;
         self.navigationItem.rightBarButtonItem = self.doneItem;
     }
