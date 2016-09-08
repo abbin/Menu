@@ -10,6 +10,7 @@
 #import "MConstants.h"
 #import "UIViewController+YMSPhotoHelper.h"
 #import "MRemoteConfig.h"
+#import "MAddViewControllerOne.h"
 
 @interface MNearbyTableViewController ()<YMSPhotoPickerViewControllerDelegate>
 
@@ -87,9 +88,9 @@
                                      [mutableImages addObject:image];
                                      
                                      if (photoAssets.count == mutableImages.count) {
-//                                         AddViewControllerOne *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AddViewControllerOne"];
-//                                         vc.images = mutableImages;
-//                                         [picker.navigationController pushViewController:vc animated:YES];
+                                         MAddViewControllerOne *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAddViewControllerOne"];
+                                         vc.images = mutableImages;
+                                         [picker.navigationController pushViewController:vc animated:YES];
                                      }
                                  }];
     }

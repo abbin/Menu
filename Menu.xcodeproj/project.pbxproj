@@ -18,7 +18,10 @@
 		EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */; };
 		EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64C11D8064BD00D77393 /* MConstants.m */; };
 		EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */; };
-		EDCC64CB1D8074F800D77393 /* MItemSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64CA1D8074F800D77393 /* MItemSearchTableViewCell.m */; };
+		EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */; };
+		EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64D01D8145B900D77393 /* MAddViewControllerTwo.m */; };
+		EDCC64D51D81826700D77393 /* MItemSearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */; };
+		EDCC64D61D81826700D77393 /* MItemSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCC64D41D81826700D77393 /* MItemSearchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +46,13 @@
 		EDCC64C11D8064BD00D77393 /* MConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MConstants.m; sourceTree = "<group>"; };
 		EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImageCollectionViewCell.h; sourceTree = "<group>"; };
 		EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImageCollectionViewCell.m; sourceTree = "<group>"; };
-		EDCC64C91D8074F800D77393 /* MItemSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MItemSearchTableViewCell.h; sourceTree = "<group>"; };
-		EDCC64CA1D8074F800D77393 /* MItemSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItemSearchTableViewCell.m; sourceTree = "<group>"; };
+		EDCC64CC1D81421C00D77393 /* MAddViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAddViewControllerOne.h; sourceTree = "<group>"; };
+		EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAddViewControllerOne.m; sourceTree = "<group>"; };
+		EDCC64CF1D8145B900D77393 /* MAddViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAddViewControllerTwo.h; sourceTree = "<group>"; };
+		EDCC64D01D8145B900D77393 /* MAddViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAddViewControllerTwo.m; sourceTree = "<group>"; };
+		EDCC64D21D81826700D77393 /* MItemSearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MItemSearchCollectionViewCell.h; sourceTree = "<group>"; };
+		EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItemSearchCollectionViewCell.m; sourceTree = "<group>"; };
+		EDCC64D41D81826700D77393 /* MItemSearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MItemSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +113,15 @@
 				EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */,
 				EDCC64BD1D8061C900D77393 /* MNearbyTableViewController.h */,
 				EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */,
+				EDCC64CC1D81421C00D77393 /* MAddViewControllerOne.h */,
+				EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */,
+				EDCC64D21D81826700D77393 /* MItemSearchCollectionViewCell.h */,
+				EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */,
+				EDCC64D41D81826700D77393 /* MItemSearchCollectionViewCell.xib */,
+				EDCC64CF1D8145B900D77393 /* MAddViewControllerTwo.h */,
+				EDCC64D01D8145B900D77393 /* MAddViewControllerTwo.m */,
 				EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */,
 				EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */,
-				EDCC64C91D8074F800D77393 /* MItemSearchTableViewCell.h */,
-				EDCC64CA1D8074F800D77393 /* MItemSearchTableViewCell.m */,
 				EDCC64A91D80578C00D77393 /* SecondViewController.h */,
 				EDCC64AA1D80578C00D77393 /* SecondViewController.m */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
@@ -189,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDCC64B31D80578C00D77393 /* LaunchScreen.storyboard in Resources */,
+				EDCC64D61D81826700D77393 /* MItemSearchCollectionViewCell.xib in Resources */,
 				EDCC64B01D80578C00D77393 /* Assets.xcassets in Resources */,
 				EDCC64AE1D80578C00D77393 /* Main.storyboard in Resources */,
 			);
@@ -252,10 +266,12 @@
 				EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */,
 				EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */,
 				EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */,
+				EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */,
 				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
-				EDCC64CB1D8074F800D77393 /* MItemSearchTableViewCell.m in Sources */,
+				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
+				EDCC64D51D81826700D77393 /* MItemSearchCollectionViewCell.m in Sources */,
 				EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
