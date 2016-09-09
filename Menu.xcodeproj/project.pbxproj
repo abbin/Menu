@@ -10,15 +10,17 @@
 		14B6E40C016D050CCE15DAAD /* libPods-Menu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C671398D9CAA8F49267E283 /* libPods-Menu.a */; };
 		ED13063C1D829A2A001DDE80 /* MItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13063B1D829A2A001DDE80 /* MItem.m */; };
 		ED1306421D829B55001DDE80 /* MRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306411D829B55001DDE80 /* MRestaurant.m */; };
-		ED1306451D829F7A001DDE80 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306441D829F7A001DDE80 /* UIView+Glow.m */; };
 		ED1306481D82C7C5001DDE80 /* MUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306471D82C7C5001DDE80 /* MUser.m */; };
 		ED13064B1D82F3AC001DDE80 /* MLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */; };
 		ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */; };
 		ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */; };
 		ED1306531D83142A001DDE80 /* HomeLoc.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ED1306521D83142A001DDE80 /* HomeLoc.gpx */; };
+		ED1306561D831540001DDE80 /* TLTagsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306551D831540001DDE80 /* TLTagsControl.m */; };
+		ED1306591D832011001DDE80 /* MWorkingDaysPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */; };
 		ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */; };
 		ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6151D81BCEA00CA7F4F /* MCuisine.m */; };
 		ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */; };
+		ED85A0FF1D8330C50023217A /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85A0FE1D8330C50023217A /* UIView+Glow.m */; };
 		EDCC64A21D80578C00D77393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A11D80578C00D77393 /* main.m */; };
 		EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A41D80578C00D77393 /* AppDelegate.m */; };
 		EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64AA1D80578C00D77393 /* SecondViewController.m */; };
@@ -43,8 +45,6 @@
 		ED13063B1D829A2A001DDE80 /* MItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItem.m; sourceTree = "<group>"; };
 		ED1306401D829B55001DDE80 /* MRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRestaurant.h; sourceTree = "<group>"; };
 		ED1306411D829B55001DDE80 /* MRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRestaurant.m; sourceTree = "<group>"; };
-		ED1306431D829F7A001DDE80 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
-		ED1306441D829F7A001DDE80 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
 		ED1306461D82C7C5001DDE80 /* MUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUser.h; sourceTree = "<group>"; };
 		ED1306471D82C7C5001DDE80 /* MUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUser.m; sourceTree = "<group>"; };
 		ED1306491D82F3AC001DDE80 /* MLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLocationPickerController.h; sourceTree = "<group>"; };
@@ -54,12 +54,18 @@
 		ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCoordinatesPickerController.h; sourceTree = "<group>"; };
 		ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCoordinatesPickerController.m; sourceTree = "<group>"; };
 		ED1306521D83142A001DDE80 /* HomeLoc.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HomeLoc.gpx; sourceTree = "<group>"; };
+		ED1306541D831540001DDE80 /* TLTagsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTagsControl.h; sourceTree = "<group>"; };
+		ED1306551D831540001DDE80 /* TLTagsControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTagsControl.m; sourceTree = "<group>"; };
+		ED1306571D832011001DDE80 /* MWorkingDaysPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWorkingDaysPickerController.h; sourceTree = "<group>"; };
+		ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWorkingDaysPickerController.m; sourceTree = "<group>"; };
 		ED71A6111D81B0DA00CA7F4F /* MCuisinePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisinePickerController.h; sourceTree = "<group>"; };
 		ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCuisinePickerController.m; sourceTree = "<group>"; };
 		ED71A6141D81BCEA00CA7F4F /* MCuisine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisine.h; sourceTree = "<group>"; };
 		ED71A6151D81BCEA00CA7F4F /* MCuisine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCuisine.m; sourceTree = "<group>"; };
 		ED71A61A1D81CF3100CA7F4F /* MTextFieldAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTextFieldAlertController.h; sourceTree = "<group>"; };
 		ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTextFieldAlertController.m; sourceTree = "<group>"; };
+		ED85A0FD1D8330C50023217A /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
+		ED85A0FE1D8330C50023217A /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
 		EDCC649D1D80578C00D77393 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC64A11D80578C00D77393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDCC64A31D80578C00D77393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,16 +173,20 @@
 				ED1306471D82C7C5001DDE80 /* MUser.m */,
 				ED13063A1D829A2A001DDE80 /* MItem.h */,
 				ED13063B1D829A2A001DDE80 /* MItem.m */,
+				ED85A0FD1D8330C50023217A /* UIView+Glow.h */,
+				ED85A0FE1D8330C50023217A /* UIView+Glow.m */,
 				ED1306401D829B55001DDE80 /* MRestaurant.h */,
 				ED1306411D829B55001DDE80 /* MRestaurant.m */,
-				ED1306431D829F7A001DDE80 /* UIView+Glow.h */,
-				ED1306441D829F7A001DDE80 /* UIView+Glow.m */,
 				ED1306491D82F3AC001DDE80 /* MLocationPickerController.h */,
 				ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */,
 				ED13064C1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.h */,
 				ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */,
 				ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */,
 				ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */,
+				ED1306541D831540001DDE80 /* TLTagsControl.h */,
+				ED1306551D831540001DDE80 /* TLTagsControl.m */,
+				ED1306571D832011001DDE80 /* MWorkingDaysPickerController.h */,
+				ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
 				EDCC64AF1D80578C00D77393 /* Assets.xcassets */,
 				EDCC64B11D80578C00D77393 /* LaunchScreen.storyboard */,
@@ -319,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */,
+				ED85A0FF1D8330C50023217A /* UIView+Glow.m in Sources */,
 				ED1306481D82C7C5001DDE80 /* MUser.m in Sources */,
 				EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */,
 				ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */,
@@ -326,9 +337,9 @@
 				ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */,
 				EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */,
 				ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */,
+				ED1306591D832011001DDE80 /* MWorkingDaysPickerController.m in Sources */,
 				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
 				ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */,
-				ED1306451D829F7A001DDE80 /* UIView+Glow.m in Sources */,
 				ED13063C1D829A2A001DDE80 /* MItem.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
 				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
@@ -336,6 +347,7 @@
 				ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */,
 				ED13064B1D82F3AC001DDE80 /* MLocationPickerController.m in Sources */,
 				EDCC64D51D81826700D77393 /* MItemSearchCollectionViewCell.m in Sources */,
+				ED1306561D831540001DDE80 /* TLTagsControl.m in Sources */,
 				ED1306421D829B55001DDE80 /* MRestaurant.m in Sources */,
 				EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */,
 			);

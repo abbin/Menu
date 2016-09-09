@@ -25,7 +25,7 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
 }
 
 - (void)startGlowingWithColor:(UIColor *)color intensity:(CGFloat)intensity {
-    [self startGlowingWithColor:color fromIntensity:0.0 toIntensity:intensity repeat:YES];
+    [self startGlowingWithColor:color fromIntensity:0.3 toIntensity:intensity repeat:YES];
 }
 
 - (void) startGlowingWithColor:(UIColor*)color fromIntensity:(CGFloat)fromIntensity toIntensity:(CGFloat)toIntensity repeat:(BOOL)repeat {
@@ -72,7 +72,7 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
     animation.fromValue = @(fromIntensity);
     animation.toValue = @(toIntensity);
     animation.repeatCount = repeat ? HUGE_VAL : 0;
-    animation.duration = 0.4;
+    animation.duration = 1.0;
     animation.autoreverses = YES;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     
@@ -82,10 +82,23 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
     [self setGlowView:glowView];
 }
 
-- (void) glowOnceWithColor:(UIColor*)color {
-    [self startGlowingWithColor:color];
+- (void) glowOnceAtLocation:(CGPoint)point inView:(UIView*)view {
+    [self startGlowingWithColor:[UIColor whiteColor] fromIntensity:0 toIntensity:0.6 repeat:NO];
     
-    Float64 delayInSeconds = 1.4;
+    [self glowView].center = point;
+    [view addSubview:[self glowView]];
+    
+    int64_t delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self stopGlowing];
+    });
+}
+
+- (void)glowOnce {
+    [self startGlowing];
+    
+    int64_t delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self stopGlowing];
@@ -94,8 +107,8 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
 }
 
 // Create a pulsing, glowing view based on this one.
-- (void) startGlowingWithColor:(UIColor*)color {
-    [self startGlowingWithColor:color intensity:0.6];
+- (void) startGlowing {
+    [self startGlowingWithColor:[UIColor redColor] intensity:0.6];
 }
 
 // Stop glowing by removing the glowing view from the superview 

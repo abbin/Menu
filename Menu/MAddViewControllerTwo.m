@@ -14,8 +14,10 @@
 #import "MLocationPickerController.h"
 #import "NSMutableDictionary+MLocation.h"
 #import "MCoordinatesPickerController.h"
+#import "TLTagsControl.h"
+#import "MWorkingDaysPickerController.h"
 
-@interface MAddViewControllerTwo ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface MAddViewControllerTwo ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,TLTagsControlDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
@@ -47,6 +49,9 @@
 
 @property (nonatomic, assign) CLLocationCoordinate2D selectedCoordinate;
 
+@property (weak, nonatomic) IBOutlet TLTagsControl *tagControl;
+@property (weak, nonatomic) IBOutlet TLTagsControl *workingDayTagControl;
+
 @end
 
 @implementation MAddViewControllerTwo
@@ -70,6 +75,13 @@
     self.corodinatesTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.tillTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.fromTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
+    
+    self.tagControl.tapDelegate = self;
+    self.tagControl.tagPlaceholder = @"type here";
+    self.workingDayTagControl.tapDelegate = self;
+    self.workingDayTagControl.tagPlaceholder = @"tap here";
+    [self.tagControl reloadTagSubviews];
+    [self.workingDayTagControl reloadTagSubviews];
     
     self.navigationItem.title = @"Restaurant details";
     UIBarButtonItem* next = [[UIBarButtonItem alloc] initWithTitle:@"Submit" style:UIBarButtonItemStylePlain target:self
@@ -262,7 +274,6 @@
         [self.restNameCollectionView reloadData];
     }
 
-    
     self.topConstrain.constant = 20;
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
@@ -314,6 +325,62 @@
 
 - (IBAction)didTapOnView:(id)sender {
     [self.view endEditing:YES];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - TLTagsControlDelegate -
+
+-(void)tagsControlDidEndEditing:(TLTagsControl *)tagsControl{
+    self.topConstrain.constant = -20;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+-(void)tagsControlDidBeginEditing:(TLTagsControl *)tagsControl{
+    if (IS_IPHONE_4_OR_LESS) {
+        self.topConstrain.constant = -350;
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+    else if (IS_IPHONE_5){
+        self.topConstrain.constant = -350;
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+    else if (IS_IPHONE_6){
+        self.topConstrain.constant = -350;
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+    else{
+        self.topConstrain.constant = -175;
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
+
+-(BOOL)tagsControlShouldBeginEditing:(TLTagsControl *)tagsControl{
+    if (tagsControl.tag == 0) {
+        return YES;
+    }
+    else{
+        [self.view endEditing:YES];
+        UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"MWorkingDaysPickerController"];
+        MWorkingDaysPickerController *vc = [nav.viewControllers firstObject];
+        [self presentViewController:nav animated:YES completion:nil];
+        return NO;
+    }
+}
+
+-(void)tagsControl:(TLTagsControl *)tagsControl didDeleteTagAtIndex:(NSInteger)index{
+    if (tagsControl.tag == 1) {
+//        [self.workingDaysArray removeObjectAtIndex:index];
+    }
 }
 
 @end
