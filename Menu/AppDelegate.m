@@ -10,6 +10,8 @@
 #import "MRemoteConfig.h"
 #import <Parse/Parse.h>
 
+@import GoogleMaps;
+
 @interface AppDelegate ()
 
 @end
@@ -30,6 +32,8 @@
     [[UITabBar appearance] setTintColor:[UIColor colorWithWhite:0.3 alpha:1]];
     
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:[MRemoteConfig primaryFontName] size:15.0]} forState:UIControlStateNormal];
+    
+    [GMSServices provideAPIKey:@"AIzaSyAyWnR6I_1znHoMbiNKIVtmWTjt4LVNRZ8"];
     
 //// DEVELOPMENT
 //    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {

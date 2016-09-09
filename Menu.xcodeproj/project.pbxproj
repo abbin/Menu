@@ -15,6 +15,7 @@
 		ED13064B1D82F3AC001DDE80 /* MLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */; };
 		ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */; };
 		ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */; };
+		ED1306531D83142A001DDE80 /* HomeLoc.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ED1306521D83142A001DDE80 /* HomeLoc.gpx */; };
 		ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */; };
 		ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6151D81BCEA00CA7F4F /* MCuisine.m */; };
 		ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */; };
@@ -52,6 +53,7 @@
 		ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MLocation.m"; sourceTree = "<group>"; };
 		ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCoordinatesPickerController.h; sourceTree = "<group>"; };
 		ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCoordinatesPickerController.m; sourceTree = "<group>"; };
+		ED1306521D83142A001DDE80 /* HomeLoc.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HomeLoc.gpx; sourceTree = "<group>"; };
 		ED71A6111D81B0DA00CA7F4F /* MCuisinePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisinePickerController.h; sourceTree = "<group>"; };
 		ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCuisinePickerController.m; sourceTree = "<group>"; };
 		ED71A6141D81BCEA00CA7F4F /* MCuisine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisine.h; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		EDCC649F1D80578C00D77393 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				ED1306521D83142A001DDE80 /* HomeLoc.gpx */,
 				EDCC64A31D80578C00D77393 /* AppDelegate.h */,
 				EDCC64A41D80578C00D77393 /* AppDelegate.m */,
 				EDCC64C01D8064BD00D77393 /* MConstants.h */,
@@ -254,6 +257,7 @@
 			files = (
 				EDCC64B31D80578C00D77393 /* LaunchScreen.storyboard in Resources */,
 				EDCC64D61D81826700D77393 /* MItemSearchCollectionViewCell.xib in Resources */,
+				ED1306531D83142A001DDE80 /* HomeLoc.gpx in Resources */,
 				EDCC64B01D80578C00D77393 /* Assets.xcassets in Resources */,
 				EDCC64AE1D80578C00D77393 /* Main.storyboard in Resources */,
 			);

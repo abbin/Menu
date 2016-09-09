@@ -45,6 +45,8 @@
 
 @property (nonatomic, strong) NSString *selectedRestName;
 
+@property (nonatomic, assign) CLLocationCoordinate2D selectedCoordinate;
+
 @end
 
 @implementation MAddViewControllerTwo
@@ -288,6 +290,10 @@
         case 3:{
             UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"MCoordinatesPickerController"];
             MCoordinatesPickerController *vc = nav.viewControllers[0];
+            [vc withCompletionHandler:^(CLLocationCoordinate2D coordinates) {
+                self.corodinatesTextField.text = [NSString stringWithFormat:@"%f, %f",coordinates.latitude,coordinates.longitude];
+                self.selectedCoordinate = coordinates;
+            }];
             [self presentViewController:nav animated:YES completion:nil];
             return NO;
         }

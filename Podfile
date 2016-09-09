@@ -11,5 +11,6 @@ pod 'Parse'
 pod 'ParseUI'
 pod 'YangMingShan'
 pod 'AFNetworking', '~> 3.0'
+pod 'GoogleMaps'
 
 end

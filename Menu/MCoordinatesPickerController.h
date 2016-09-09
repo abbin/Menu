@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@import CoreLocation;
+
 @interface MCoordinatesPickerController : UIViewController
+
+-(void)withCompletionHandler:(void(^)(CLLocationCoordinate2D coordinates))handler;
 
 @end
