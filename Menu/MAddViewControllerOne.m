@@ -13,13 +13,19 @@
 #import "MConstants.h"
 #import "MItemSearchCollectionViewCell.h"
 #import "MCuisinePickerController.h"
+#import "UIView+Glow.h"
+#import "MItem.h"
 
-@interface MAddViewControllerOne ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,UITextFieldDelegate,UITextViewDelegate,MCuisinePickerControllerDelegate>
+@interface MAddViewControllerOne ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,UITextFieldDelegate,UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cuisineHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionheaderLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *nameGlowView;
+@property (weak, nonatomic) IBOutlet UIView *cuisineGlowView;
+@property (weak, nonatomic) IBOutlet UIView *priceGlowView;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cuisineTextField;
@@ -31,6 +37,7 @@
 
 @property (nonatomic, strong) NSMutableArray *itemsArray;
 @property (nonatomic, strong) NSString *selectedItemName;
+@property (nonatomic, strong) MCuisine *selectedCuisine;
 
 @end
 
@@ -47,6 +54,15 @@
     self.cuisineTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.priceTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.descriptionTextView.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
+    
+    self.nameGlowView.layer.cornerRadius = self.nameGlowView.frame.size.height/2;
+    self.nameGlowView.layer.masksToBounds = YES;
+    
+    self.cuisineGlowView.layer.cornerRadius = self.cuisineGlowView.frame.size.height/2;
+    self.cuisineGlowView.layer.masksToBounds = YES;
+    
+    self.priceGlowView.layer.cornerRadius = self.priceGlowView.frame.size.height/2;
+    self.priceGlowView.layer.masksToBounds = YES;
 
     UIBarButtonItem* next = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self
                                                                   action:@selector(barButtonNextPressed:)];
@@ -59,6 +75,7 @@
     [layout setMinimumLineSpacing:0];
     [layout setMinimumInteritemSpacing:0];
     self.itemNameCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44) collectionViewLayout:layout];
+    [self.itemNameCollectionView setShowsHorizontalScrollIndicator:NO];
     self.itemNameCollectionView.tag = 1;
     [self.itemNameCollectionView setDataSource:self];
     [self.itemNameCollectionView setDelegate:self];
@@ -68,10 +85,46 @@
 }
 
 -(void)barButtonNextPressed:(id)sender{
-    [self.view endEditing:YES];
+//    if (self.selectedItemName.length == 0){
+//        [self.nameGlowView glowOnceWithColor:[UIColor redColor]];
+//    }
+//    else if (self.selectedCuisine == nil){
+//        [self.cuisineGlowView glowOnceWithColor:[UIColor redColor]];
+//    }
+//    else if ([self.priceTextField.text isEqualToString:[[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]] || self.priceTextField.text.length==0){
+//        [self.priceGlowView glowOnceWithColor:[UIColor redColor]];
+//    }
+//    else{
+//        [self.view endEditing:YES];
+//        
+//        NSString *newStr = [self.priceTextField.text substringFromIndex:1];
+//        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+//        NSNumber *price = [f numberFromString:newStr];
+//        
+//        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+//        [formatter setLocale:[NSLocale currentLocale]];
+//        
+//        if ([self.descriptionTextView.text isEqualToString:@"type here"]) {
+//            self.descriptionTextView.text = @"";
+//        }
     
-    MAddViewControllerTwo *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAddViewControllerTwo"];
-    [self.navigationController pushViewController:vc animated:YES];
+        MAddViewControllerTwo *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAddViewControllerTwo"];
+//        vc.images = self.images;
+//        
+//        vc.item = [MItem object];
+//        vc.item.itemName = self.nameTextField.text;
+//        vc.item.itemPrice = price;
+//        vc.item.itemCuisine = self.selectedCuisine;
+//        vc.item.itemDescription = self.descriptionTextView.text;
+//        vc.item.itemCurrency = [formatter currencyCode];
+//        vc.item.itemCurrencySymbol = [formatter currencySymbol];
+//        vc.item.itemUser = [MUser currentUser];
+//        NSArray* words = [self.nameTextField.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//        NSString* trimmedString = [words componentsJoinedByString:@""];
+//        vc.item.itemCappedName = [trimmedString lowercaseString];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+//    }
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -138,18 +191,20 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     if (textField.tag == 1) {
-        MCuisinePickerController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MCuisinePickerController"];
-        vc.delegate = self;
-        [self presentViewController:vc animated:YES completion:nil];
+        
+        UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"MCuisinePickerController"];
+        MCuisinePickerController *vc = nav.viewControllers[0];
+        [vc withCompletionHandler:^(MCuisine *cuisine) {
+            self.selectedCuisine = cuisine;
+            self.cuisineTextField.text = cuisine.cuisineName;
+        }];
+        [self presentViewController:nav animated:YES completion:nil];
+        
         return NO;
     }
     else{
         return YES;
     }
-}
-
--(void)cuisinePickerController:(MCuisinePickerController *)picker didFinishWithCuisine:(MCuisine *)Cuisine{
-    
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -269,9 +324,35 @@
         }
 
     }
+    
+    if (textField.tag == 2) {
+        if ([textField.text isEqualToString:@""]) {
+            textField.text = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol];
+        }
+    }
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (textField.tag == 2) {
+        if ((range.location == 0 && range.length == 1) || (range.location > 6 && range.length == 0)) {
+            return NO;
+        }
+        else{
+            return YES;
+        }
+    }
+    else{
+        return YES;
+    }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.tag == 2) {
+        if ([textField.text isEqualToString:[[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]]) {
+            textField.text = @"";
+        }
+    }
+    
     if (textField.tag == 0) {
         textField.text = self.selectedItemName;
         self.itemsArray = nil;

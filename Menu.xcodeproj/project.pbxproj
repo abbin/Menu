@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		14B6E40C016D050CCE15DAAD /* libPods-Menu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C671398D9CAA8F49267E283 /* libPods-Menu.a */; };
+		ED13063C1D829A2A001DDE80 /* MItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13063B1D829A2A001DDE80 /* MItem.m */; };
+		ED1306421D829B55001DDE80 /* MRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306411D829B55001DDE80 /* MRestaurant.m */; };
+		ED1306451D829F7A001DDE80 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306441D829F7A001DDE80 /* UIView+Glow.m */; };
+		ED1306481D82C7C5001DDE80 /* MUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306471D82C7C5001DDE80 /* MUser.m */; };
+		ED13064B1D82F3AC001DDE80 /* MLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */; };
+		ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */; };
+		ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */; };
 		ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */; };
 		ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6151D81BCEA00CA7F4F /* MCuisine.m */; };
 		ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */; };
@@ -31,6 +38,20 @@
 		9C671398D9CAA8F49267E283 /* libPods-Menu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Menu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA49599CDE7B22AF41937D6 /* Pods-Menu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Menu/Pods-Menu.debug.xcconfig"; sourceTree = "<group>"; };
 		D5BDAA1F0A6FB7032E25392E /* Pods-Menu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Menu/Pods-Menu.release.xcconfig"; sourceTree = "<group>"; };
+		ED13063A1D829A2A001DDE80 /* MItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MItem.h; sourceTree = "<group>"; };
+		ED13063B1D829A2A001DDE80 /* MItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItem.m; sourceTree = "<group>"; };
+		ED1306401D829B55001DDE80 /* MRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRestaurant.h; sourceTree = "<group>"; };
+		ED1306411D829B55001DDE80 /* MRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRestaurant.m; sourceTree = "<group>"; };
+		ED1306431D829F7A001DDE80 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
+		ED1306441D829F7A001DDE80 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
+		ED1306461D82C7C5001DDE80 /* MUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUser.h; sourceTree = "<group>"; };
+		ED1306471D82C7C5001DDE80 /* MUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUser.m; sourceTree = "<group>"; };
+		ED1306491D82F3AC001DDE80 /* MLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLocationPickerController.h; sourceTree = "<group>"; };
+		ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLocationPickerController.m; sourceTree = "<group>"; };
+		ED13064C1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MLocation.h"; sourceTree = "<group>"; };
+		ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MLocation.m"; sourceTree = "<group>"; };
+		ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCoordinatesPickerController.h; sourceTree = "<group>"; };
+		ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCoordinatesPickerController.m; sourceTree = "<group>"; };
 		ED71A6111D81B0DA00CA7F4F /* MCuisinePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisinePickerController.h; sourceTree = "<group>"; };
 		ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCuisinePickerController.m; sourceTree = "<group>"; };
 		ED71A6141D81BCEA00CA7F4F /* MCuisine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisine.h; sourceTree = "<group>"; };
@@ -139,6 +160,20 @@
 				ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */,
 				ED71A6141D81BCEA00CA7F4F /* MCuisine.h */,
 				ED71A6151D81BCEA00CA7F4F /* MCuisine.m */,
+				ED1306461D82C7C5001DDE80 /* MUser.h */,
+				ED1306471D82C7C5001DDE80 /* MUser.m */,
+				ED13063A1D829A2A001DDE80 /* MItem.h */,
+				ED13063B1D829A2A001DDE80 /* MItem.m */,
+				ED1306401D829B55001DDE80 /* MRestaurant.h */,
+				ED1306411D829B55001DDE80 /* MRestaurant.m */,
+				ED1306431D829F7A001DDE80 /* UIView+Glow.h */,
+				ED1306441D829F7A001DDE80 /* UIView+Glow.m */,
+				ED1306491D82F3AC001DDE80 /* MLocationPickerController.h */,
+				ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */,
+				ED13064C1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.h */,
+				ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */,
+				ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */,
+				ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
 				EDCC64AF1D80578C00D77393 /* Assets.xcassets */,
 				EDCC64B11D80578C00D77393 /* LaunchScreen.storyboard */,
@@ -185,6 +220,7 @@
 		EDCC64951D80578C00D77393 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = M;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Fuudapp;
 				TargetAttributes = {
@@ -279,17 +315,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */,
+				ED1306481D82C7C5001DDE80 /* MUser.m in Sources */,
 				EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */,
 				ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */,
 				EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */,
+				ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */,
 				EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */,
 				ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */,
 				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
 				ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */,
+				ED1306451D829F7A001DDE80 /* UIView+Glow.m in Sources */,
+				ED13063C1D829A2A001DDE80 /* MItem.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
 				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
+				ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */,
+				ED13064B1D82F3AC001DDE80 /* MLocationPickerController.m in Sources */,
 				EDCC64D51D81826700D77393 /* MItemSearchCollectionViewCell.m in Sources */,
+				ED1306421D829B55001DDE80 /* MRestaurant.m in Sources */,
 				EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

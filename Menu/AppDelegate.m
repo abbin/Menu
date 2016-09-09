@@ -31,13 +31,13 @@
     
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:[MRemoteConfig primaryFontName] size:15.0]} forState:UIControlStateNormal];
     
-// DEVELOPMENT
-    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = @"D1157CB5F4084F1095F3BD12AA015104";
-        configuration.server = @"http://menudevelopment.herokuapp.com/parse";
-    }]];
+//// DEVELOPMENT
+//    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+//        configuration.applicationId = @"D1157CB5F4084F1095F3BD12AA015104";
+//        configuration.server = @"http://menudevelopment.herokuapp.com/parse";
+//    }]];
     
-// LIVE
+//// LIVE
 //    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
 //        configuration.applicationId = @"0390D15E0418490C9143732983940773";
 //        configuration.server = @"http://menulive.herokuapp.com/parse";

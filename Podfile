@@ -10,5 +10,6 @@ target 'Menu' do
 pod 'Parse'
 pod 'ParseUI'
 pod 'YangMingShan'
+pod 'AFNetworking', '~> 3.0'
 
 end

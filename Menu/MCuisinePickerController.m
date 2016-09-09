@@ -12,7 +12,9 @@
 #import "MRemoteConfig.h"
 #import "MTextFieldAlertController.h"
 
-@interface MCuisinePickerController ()<MTextFieldAlertControllerDelegate>
+@interface MCuisinePickerController ()
+
+@property (nonatomic, strong) void(^completionHandler)(MCuisine *);
 
 @end
 
@@ -66,65 +68,27 @@
 }
 
 - (IBAction)addNewCuisine:(id)sender {
-//    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"New cuisine"
-//                                                                              message: @"Add a new cuisine to our database"
-//                                                                       preferredStyle:UIAlertControllerStyleAlert];
-//    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-//        textField.placeholder = @"e.g. Chinese";
-//        textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-//    }];
-//
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//        NSArray * textfields = alertController.textFields;
-//        UITextField * namefield = textfields[0];
-//        [namefield resignFirstResponder];
-//        NSString* result = [namefield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-//        
-//        if (result.length>0) {
-//            MCuisine *cuisine = [MCuisine object];
-//            cuisine.cuisineName = result;
-//            
-//            [cuisine saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                if (succeeded) {
-//                    [self dismissViewControllerAnimated:YES completion:^{
-//                        if ([self.delegate respondsToSelector:@selector(cuisinePickerController:didFinishWithCuisine:)]) {
-//                            [self.delegate cuisinePickerController:self didFinishWithCuisine:cuisine];
-//                        }
-//                    }];
-//                } else {
-//                    // There was a problem, check error.description
-//                }
-//            }];
-//        }
-//        
-//    }]];
-//    [self presentViewController:alertController animated:YES completion:nil];
-    
     MTextFieldAlertController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTextFieldAlertController"];
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    vc.delegate = self;
     vc.titleString = @"New +";
     vc.messageString = @"Add a new cuisine to our database";
+    [vc withCompletionHandler:^(MCuisine *cuisine) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            _completionHandler(cuisine);
+        }];
+    }];
     [self presentViewController:vc animated:NO completion:nil];
     
 };
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self dismissViewControllerAnimated:YES completion:^{
-        if ([self.delegate respondsToSelector:@selector(cuisinePickerController:didFinishWithCuisine:)]) {
-            [self.delegate cuisinePickerController:self didFinishWithCuisine:[self.objects objectAtIndex:indexPath.row]];
-        }
-    }];
+-(void)withCompletionHandler:(void(^)(MCuisine *cuisine))handler{
+    _completionHandler = handler;
 }
 
--(void)textFieldAlertController:(MTextFieldAlertController *)controller didFinishWithObject:(id)object{
-    if ([object isKindOfClass:[MCuisine class]]) {
-        [self dismissViewControllerAnimated:YES completion:^{
-            if ([self.delegate respondsToSelector:@selector(cuisinePickerController:didFinishWithCuisine:)]) {
-                [self.delegate cuisinePickerController:self didFinishWithCuisine:object];
-            }
-        }];
-    }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self dismissViewControllerAnimated:YES completion:^{
+        _completionHandler([self.objects objectAtIndex:indexPath.row]);
+    }];
 }
 
 @end

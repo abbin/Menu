@@ -24,7 +24,12 @@
 
 FOUNDATION_EXPORT NSString *const kMItemsClassNameKey;
 FOUNDATION_EXPORT NSString *const kMCuisineClassNameKey;
+FOUNDATION_EXPORT NSString *const kMRestaurantClassNameKey;
 
 FOUNDATION_EXPORT NSString *const kMCuisineNameKey;
+
+FOUNDATION_EXPORT NSString *const kMCurrentLocationKey;
+
+FOUNDATION_EXPORT NSString *const kMGoogleServerKey;
 
 @end

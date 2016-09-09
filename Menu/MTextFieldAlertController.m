@@ -8,7 +8,6 @@
 
 #import "MTextFieldAlertController.h"
 #import "MRemoteConfig.h"
-#import "MCuisine.h"
 
 @interface MTextFieldAlertController ()<UITextFieldDelegate>
 
@@ -18,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailedLabel;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+@property (nonatomic, strong) void(^completionHandler)(MCuisine *);
 
 @end
 
@@ -52,6 +53,10 @@
     }];
 }
 
+-(void)withCompletionHandler:(void(^)(MCuisine *cuisine))handler{
+    _completionHandler = handler;
+}
+
 - (IBAction)done:(id)sender {
     if (self.textField.text.length>0) {
         NSString* result = [self.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -65,9 +70,7 @@
                 if (succeeded) {
                     [self.textField resignFirstResponder];
                     [self dismissViewControllerAnimated:YES completion:^{
-                        if ([self.delegate respondsToSelector:@selector(textFieldAlertController:didFinishWithObject:)]) {
-                            [self.delegate textFieldAlertController:self didFinishWithObject:cuisine];
-                        }
+                        _completionHandler(cuisine);
                     }];
                 }
             }];

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MItem.h"
 
 @interface MAddViewControllerTwo : UIViewController
+
+@property (nonatomic, strong) MItem *item;
+@property (nonatomic, strong) NSArray *images;
 
 @end
