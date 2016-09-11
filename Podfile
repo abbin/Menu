@@ -12,5 +12,8 @@ pod 'ParseUI'
 pod 'YangMingShan'
 pod 'AFNetworking', '~> 3.0'
 pod 'GoogleMaps'
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
+pod 'FBSDKLoginKit'
 
 end

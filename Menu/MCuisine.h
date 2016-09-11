@@ -13,5 +13,6 @@
 + (NSString *)parseClassName;
 
 @property (nonatomic,strong) NSString *cuisineName;
+@property (nonatomic,strong) NSString *cuisineCappedName;
 
 @end

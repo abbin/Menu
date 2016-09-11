@@ -41,6 +41,8 @@
 
 @property (nonatomic, strong) PFQuery *query;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation MAddViewControllerOne
@@ -193,7 +195,9 @@
         NSString *lowString = [trimmedString lowercaseString];
         
         [self.query whereKey:kMItemCappedNameKey hasPrefix:lowString];
+        [self.activityIndicator startAnimating];
         [self.query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [self.activityIndicator stopAnimating];
             if (error == nil) {
                 if (objects.count>0) {
                     self.itemsArray = [objects mutableCopy];

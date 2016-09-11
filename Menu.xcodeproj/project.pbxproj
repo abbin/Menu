@@ -26,6 +26,9 @@
 		ED93B6DE1D846F9800A654B0 /* MNearbyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6DD1D846F9800A654B0 /* MNearbyTableViewCell.m */; };
 		ED93B6E11D854C3000A654B0 /* MSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6E01D854C3000A654B0 /* MSigninViewController.m */; };
 		ED93B6E41D854C6B00A654B0 /* MCurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */; };
+		ED93B6E71D8552B500A654B0 /* MTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6E61D8552B500A654B0 /* MTabBarController.m */; };
+		ED93B6E91D8554AC00A654B0 /* IMG_0102.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED93B6E81D8554AC00A654B0 /* IMG_0102.mp4 */; };
+		ED93B6EB1D8575B600A654B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED93B6EA1D8575B600A654B0 /* libsqlite3.tbd */; };
 		EDCC64A21D80578C00D77393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A11D80578C00D77393 /* main.m */; };
 		EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A41D80578C00D77393 /* AppDelegate.m */; };
 		EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64AA1D80578C00D77393 /* SecondViewController.m */; };
@@ -81,6 +84,10 @@
 		ED93B6E01D854C3000A654B0 /* MSigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSigninViewController.m; sourceTree = "<group>"; };
 		ED93B6E21D854C6B00A654B0 /* MCurrentLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCurrentLocationViewController.h; sourceTree = "<group>"; };
 		ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCurrentLocationViewController.m; sourceTree = "<group>"; };
+		ED93B6E51D8552B500A654B0 /* MTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTabBarController.h; sourceTree = "<group>"; };
+		ED93B6E61D8552B500A654B0 /* MTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTabBarController.m; sourceTree = "<group>"; };
+		ED93B6E81D8554AC00A654B0 /* IMG_0102.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0102.mp4; sourceTree = "<group>"; };
+		ED93B6EA1D8575B600A654B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		EDCC649D1D80578C00D77393 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC64A11D80578C00D77393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDCC64A31D80578C00D77393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED93B6EB1D8575B600A654B0 /* libsqlite3.tbd in Frameworks */,
 				14B6E40C016D050CCE15DAAD /* libPods-Menu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +131,7 @@
 		26C80B5B07283E04AB8CAD98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED93B6EA1D8575B600A654B0 /* libsqlite3.tbd */,
 				9C671398D9CAA8F49267E283 /* libPods-Menu.a */,
 			);
 			name = Frameworks;
@@ -212,7 +221,10 @@
 				ED93B6E01D854C3000A654B0 /* MSigninViewController.m */,
 				ED93B6E21D854C6B00A654B0 /* MCurrentLocationViewController.h */,
 				ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */,
+				ED93B6E51D8552B500A654B0 /* MTabBarController.h */,
+				ED93B6E61D8552B500A654B0 /* MTabBarController.m */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
+				ED93B6E81D8554AC00A654B0 /* IMG_0102.mp4 */,
 				EDCC64AF1D80578C00D77393 /* Assets.xcassets */,
 				EDCC64B11D80578C00D77393 /* LaunchScreen.storyboard */,
 				EDCC64B41D80578C00D77393 /* Info.plist */,
@@ -294,6 +306,7 @@
 				EDCC64D61D81826700D77393 /* MItemSearchCollectionViewCell.xib in Resources */,
 				ED1306531D83142A001DDE80 /* HomeLoc.gpx in Resources */,
 				EDCC64B01D80578C00D77393 /* Assets.xcassets in Resources */,
+				ED93B6E91D8554AC00A654B0 /* IMG_0102.mp4 in Resources */,
 				EDCC64AE1D80578C00D77393 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +385,7 @@
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
 				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
+				ED93B6E71D8552B500A654B0 /* MTabBarController.m in Sources */,
 				ED93B6E11D854C3000A654B0 /* MSigninViewController.m in Sources */,
 				ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */,
 				ED93B6D51D84345900A654B0 /* MManager.m in Sources */,

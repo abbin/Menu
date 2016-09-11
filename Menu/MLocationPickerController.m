@@ -14,10 +14,12 @@
 @interface MLocationPickerController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) void(^completionHandler)(NSMutableDictionary *);
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSURLSessionDataTask *dataTask;
 @property (strong, nonatomic) NSArray *locArray;
 @property (weak, nonatomic) IBOutlet UITableView *locTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @end
 
 @implementation MLocationPickerController
@@ -56,15 +58,16 @@
         NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%@&types=(cities)&components=country:%@&key=%@",nospacestring,countryCode,kMGoogleServerKey];
         NSURL *URL = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-        
+        [self.activityIndicator startAnimating];
         self.dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
             if (!error) {
+                [self.activityIndicator stopAnimating];
                 self.locArray = responseObject[@"predictions"];
                 [self.locTableView reloadData];
             }
             else{
                 if (error.code != -999) {
-
+                    [self.activityIndicator stopAnimating];
                 }
             }
         }];

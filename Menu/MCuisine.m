@@ -13,6 +13,7 @@
 @implementation MCuisine
 
 @dynamic cuisineName;
+@dynamic cuisineCappedName;
 
 +(void)load{
     [self registerSubclass];

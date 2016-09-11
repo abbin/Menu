@@ -64,6 +64,13 @@
         if (result.length>0) {
             MCuisine *cuisine = [MCuisine object];
             cuisine.cuisineName = result;
+            
+            NSArray* words = [result componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            NSString* trimmedString = [words componentsJoinedByString:@""];
+            NSString *lowString = [trimmedString lowercaseString];
+            
+            cuisine.cuisineCappedName = lowString;
+
             [self.activityIndicator startAnimating];
             [cuisine saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 [self.activityIndicator stopAnimating];

@@ -12,9 +12,13 @@
 #import "MRemoteConfig.h"
 #import "MTextFieldAlertController.h"
 
-@interface MCuisinePickerController ()
+@interface MCuisinePickerController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) void(^completionHandler)(MCuisine *);
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (nonatomic, strong) PFQuery *cuisineQuery;
 
 @end
 
@@ -39,24 +43,49 @@
         self.paginationEnabled = YES;
         
         self.objectsPerPage = 100;
+        
+        self.cuisineQuery = [PFQuery queryWithClassName:self.parseClassName];
     }
     
     return self;
 }
 
 - (PFQuery *)queryForTable {
-    
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [self.cuisineQuery cancel];
     
     if (self.objects.count == 0) {
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        self.cuisineQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
-    [query orderByAscending:kMCuisineNameKey];
     
-    return query;
+    [self.cuisineQuery orderByAscending:kMCuisineNameKey];
+    
+    if (self.searchBar.text.length>0) {
+//        NSArray* words = [self.searchBar.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//        NSString* trimmedString = [words componentsJoinedByString:@""];
+//        NSString *lowString = [trimmedString lowercaseString];
+        
+        [self.cuisineQuery whereKey:kMCuisineNameKey hasPrefix:self.searchBar.text];
+    }
+    else{
+        self.cuisineQuery = [PFQuery queryWithClassName:self.parseClassName];
+        
+        [self.cuisineQuery cancel];
+        
+        if (self.objects.count == 0) {
+            self.cuisineQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        }
+        
+        [self.cuisineQuery orderByAscending:kMCuisineNameKey];
+    }
+    
+    return self.cuisineQuery;
 }
 
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [self loadObjects];
+}
 - (IBAction)cancel:(id)sender {
+    [self.searchBar resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -12,6 +12,8 @@
 #import "MManager.h"
 #import "MSigninViewController.h"
 #import "MCurrentLocationViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @import GoogleMaps;
 
@@ -50,6 +52,10 @@
 //        configuration.server = @"http://menulive.herokuapp.com/parse";
 //    }]];
     
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKLoginButton class];
+    
     if (![MManager isLocationSet]) {
         if (![MUser currentUser]) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -68,6 +74,21 @@
     }
     
     return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
+- (void)changeRootViewController:(UIViewController*)viewController {
+    self.window.rootViewController = viewController;
 }
 
 @end

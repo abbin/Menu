@@ -19,6 +19,7 @@ NSString *const kMCuisineClassNameKey                = @"cuisines";
 NSString *const kMRestaurantClassNameKey                = @"restaurants";
 
 NSString *const kMCuisineNameKey                     = @"cuisineName";
+NSString *const kMCuisineCappedNameKey                     = @"cuisineCappedName";
 
 NSString *const kMCurrentLocationKey                     = @"currentLocation";
 
