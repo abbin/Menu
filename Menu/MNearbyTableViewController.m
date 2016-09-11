@@ -11,6 +11,7 @@
 #import "UIViewController+YMSPhotoHelper.h"
 #import "MRemoteConfig.h"
 #import "MAddViewControllerOne.h"
+#import "MNearbyTableViewCell.h"
 
 @interface MNearbyTableViewController ()<YMSPhotoPickerViewControllerDelegate>
 
@@ -20,6 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.estimatedRowHeight = 434;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
 }
 
 - (IBAction)addNew:(id)sender {
@@ -116,14 +121,20 @@
 - (PFQuery *)queryForTable {
     
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query includeKey:@"restaurent"];
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
+    [query includeKeys:@[kMItemsUserKey,kMItemRestaurantKey]];
+    
     if (self.objects.count == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
+    
     [query orderByDescending:@"createdAt"];
     return query;
+}
+
+-(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(MItem *)object{
+    MNearbyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MNearbyTableViewCell"];
+    cell.cellItem = object;
+    return cell;
 }
 
 @end

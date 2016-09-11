@@ -18,4 +18,8 @@
 @property (strong, nonatomic) NSMutableArray *restaurantPhoneNumbers;
 @property (strong, nonatomic) NSMutableArray *restaurantWorkingHours;
 
++(MRestaurant*)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate phonumber:(NSMutableArray*)phoneNumber workingDays:(NSMutableArray*)workingDays from:(NSString*)from till:(NSString*)till;
+
++(MRestaurant*)initWithDictionary:(NSDictionary*)dictionary;
+
 @end

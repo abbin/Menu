@@ -12,6 +12,7 @@
 @implementation MUser
 
 @dynamic profilePhotoUrl;
+@dynamic displayName;
 
 + (void)load {
     [self registerSubclass];

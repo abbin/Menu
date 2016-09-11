@@ -23,6 +23,10 @@
 @interface MConstants : NSObject
 
 FOUNDATION_EXPORT NSString *const kMItemsClassNameKey;
+
+FOUNDATION_EXPORT NSString *const kMItemsUserKey;
+FOUNDATION_EXPORT NSString *const kMItemRestaurantKey;
+
 FOUNDATION_EXPORT NSString *const kMCuisineClassNameKey;
 FOUNDATION_EXPORT NSString *const kMRestaurantClassNameKey;
 
@@ -31,5 +35,14 @@ FOUNDATION_EXPORT NSString *const kMCuisineNameKey;
 FOUNDATION_EXPORT NSString *const kMCurrentLocationKey;
 
 FOUNDATION_EXPORT NSString *const kMGoogleServerKey;
+
+FOUNDATION_EXPORT NSString *const kMItemCappedNameKey;
+
+FOUNDATION_EXPORT NSString *const kMItemImageFileKey;
+FOUNDATION_EXPORT NSString *const kMItemImageTimeStampKey;
+FOUNDATION_EXPORT NSString *const kMItemImageVoteKey;
+
+FOUNDATION_EXPORT NSString *const kMSaveCompleteNotificationKey;
+FOUNDATION_EXPORT NSString *const kMSaveFailNotificationKey;
 
 @end

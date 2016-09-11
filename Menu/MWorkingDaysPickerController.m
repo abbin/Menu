@@ -27,12 +27,18 @@
 @property (weak, nonatomic) IBOutlet UIView *saturdayGlowView;
 @property (weak, nonatomic) IBOutlet UIView *sundayGlowView;
 
+@property (nonatomic, strong) void(^completionHandler)(NSMutableArray *);
+
+@property (strong, nonatomic) NSMutableArray *daysArray;
+
 @end
 
 @implementation MWorkingDaysPickerController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.daysArray = [[NSMutableArray alloc]init];
     
     CGFloat borderWidth = 1;
     UIColor *color = [UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:1];
@@ -81,61 +87,140 @@
     self.sundayButton.titleLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    for (NSDictionary *dict in self.workingDaysArray) {
+        NSInteger day = [[[dict objectForKey:@"close"] objectForKey:@"day"] integerValue];
+        switch (day) {
+            case 0:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.sundayGlowView startGlowing];
+                break;
+            case 1:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.mondayGlowView startGlowing];
+                break;
+            case 2:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.tuesdayGlowView startGlowing];
+                break;
+            case 3:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.wednesdayGlowView startGlowing];
+                break;
+            case 4:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.thursdayGlowView startGlowing];
+                break;
+            case 5:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.fridayGlowView startGlowing];
+                break;
+            case 6:
+                [self.daysArray addObject:[NSNumber numberWithInteger:day]];
+                [self.saturdayGlowView startGlowing];
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
 - (IBAction)selectMonday:(id)sender {
     if (self.mondayGlowView.glowView == nil) {
         [self.mondayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:1]];
     }
     else{
         [self.mondayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:1]];
     }
 }
 - (IBAction)selectTuesday:(id)sender {
     if (self.tuesdayGlowView.glowView == nil) {
         [self.tuesdayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:2]];
     }
     else{
         [self.tuesdayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:2]];
     }
 }
 - (IBAction)selectWednesday:(id)sender {
     if (self.wednesdayGlowView.glowView == nil) {
         [self.wednesdayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:3]];
     }
     else{
         [self.wednesdayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:3]];
     }
 }
 - (IBAction)selectThrusday:(id)sender {
     if (self.thursdayGlowView.glowView == nil) {
         [self.thursdayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:4]];
     }
     else{
         [self.thursdayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:4]];
     }
 }
 - (IBAction)selectFriday:(id)sender {
     if (self.fridayGlowView.glowView == nil) {
         [self.fridayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:5]];
     }
     else{
         [self.fridayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:5]];
     }
 }
 - (IBAction)selectSaturday:(id)sender {
     if (self.saturdayGlowView.glowView == nil) {
         [self.saturdayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:6]];
     }
     else{
         [self.saturdayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:6]];
     }
 }
 - (IBAction)selectSunday:(id)sender {
     if (self.sundayGlowView.glowView == nil) {
         [self.sundayGlowView startGlowing];
+        [self.daysArray addObject:[NSNumber numberWithInteger:0]];
     }
     else{
         [self.sundayGlowView stopGlowing];
+        [self.daysArray removeObject:[NSNumber numberWithInteger:0]];
     }
+}
+
+-(void)withCompletionHandler:(void(^)(NSMutableArray *days))handler{
+    _completionHandler = handler;
+}
+
+- (IBAction)done:(id)sender {
+    NSMutableArray *arrayOfDays = [NSMutableArray new];
+    for (NSNumber *num in self.daysArray) {
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSArray *daySymbols = dateFormatter.standaloneWeekdaySymbols;
+        
+        NSInteger dayIndex = [num integerValue]; // 0 = Sunday, ... 6 = Saturday
+        NSString *dayName = daySymbols[dayIndex];
+        
+        NSMutableDictionary *close = [NSMutableDictionary dictionaryWithObjectsAndKeys:num,@"day",dayName, @"dayName", nil];
+        NSMutableDictionary *open = [NSMutableDictionary dictionaryWithObjectsAndKeys:num,@"day",dayName, @"dayName", nil];
+        NSMutableDictionary *mainDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:close,@"close",open,@"open", nil];
+        [arrayOfDays addObject:mainDict];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        _completionHandler(arrayOfDays);
+    }];
 }
 
 - (IBAction)cancel:(id)sender {

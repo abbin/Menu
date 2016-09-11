@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "MRemoteConfig.h"
 #import <Parse/Parse.h>
+#import "MManager.h"
+#import "MSigninViewController.h"
+#import "MCurrentLocationViewController.h"
 
 @import GoogleMaps;
 
@@ -35,17 +38,34 @@
     
     [GMSServices provideAPIKey:@"AIzaSyAyWnR6I_1znHoMbiNKIVtmWTjt4LVNRZ8"];
     
-//// DEVELOPMENT
-//    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-//        configuration.applicationId = @"D1157CB5F4084F1095F3BD12AA015104";
-//        configuration.server = @"http://menudevelopment.herokuapp.com/parse";
-//    }]];
+// DEVELOPMENT
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        configuration.applicationId = @"D1157CB5F4084F1095F3BD12AA015104";
+        configuration.server = @"http://menudevelopment.herokuapp.com/parse";
+    }]];
     
 //// LIVE
 //    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
 //        configuration.applicationId = @"0390D15E0418490C9143732983940773";
 //        configuration.server = @"http://menulive.herokuapp.com/parse";
 //    }]];
+    
+    if (![MManager isLocationSet]) {
+        if (![MUser currentUser]) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MSigninViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MSigninViewController"];
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            self.window.rootViewController = rootViewController;
+            [self.window makeKeyAndVisible];
+        }
+        else{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MCurrentLocationViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MCurrentLocationViewController"];
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            self.window.rootViewController = rootViewController;
+            [self.window makeKeyAndVisible];
+        }
+    }
     
     return YES;
 }

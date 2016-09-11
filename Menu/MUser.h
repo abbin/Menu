@@ -11,5 +11,6 @@
 @interface MUser : PFUser
 
 @property (nonatomic, strong) NSString *profilePhotoUrl;
+@property (nonatomic, strong) NSString *displayName;
 
 @end

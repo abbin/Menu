@@ -21,6 +21,11 @@
 		ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6151D81BCEA00CA7F4F /* MCuisine.m */; };
 		ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */; };
 		ED85A0FF1D8330C50023217A /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85A0FE1D8330C50023217A /* UIView+Glow.m */; };
+		ED93B6D51D84345900A654B0 /* MManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6D41D84345900A654B0 /* MManager.m */; };
+		ED93B6DB1D84565000A654B0 /* MBasicAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6DA1D84565000A654B0 /* MBasicAlertController.m */; };
+		ED93B6DE1D846F9800A654B0 /* MNearbyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6DD1D846F9800A654B0 /* MNearbyTableViewCell.m */; };
+		ED93B6E11D854C3000A654B0 /* MSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6E01D854C3000A654B0 /* MSigninViewController.m */; };
+		ED93B6E41D854C6B00A654B0 /* MCurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */; };
 		EDCC64A21D80578C00D77393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A11D80578C00D77393 /* main.m */; };
 		EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A41D80578C00D77393 /* AppDelegate.m */; };
 		EDCC64AB1D80578C00D77393 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64AA1D80578C00D77393 /* SecondViewController.m */; };
@@ -66,6 +71,16 @@
 		ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTextFieldAlertController.m; sourceTree = "<group>"; };
 		ED85A0FD1D8330C50023217A /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
 		ED85A0FE1D8330C50023217A /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
+		ED93B6D31D84345900A654B0 /* MManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MManager.h; sourceTree = "<group>"; };
+		ED93B6D41D84345900A654B0 /* MManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MManager.m; sourceTree = "<group>"; };
+		ED93B6D91D84565000A654B0 /* MBasicAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBasicAlertController.h; sourceTree = "<group>"; };
+		ED93B6DA1D84565000A654B0 /* MBasicAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBasicAlertController.m; sourceTree = "<group>"; };
+		ED93B6DC1D846F9800A654B0 /* MNearbyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNearbyTableViewCell.h; sourceTree = "<group>"; };
+		ED93B6DD1D846F9800A654B0 /* MNearbyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNearbyTableViewCell.m; sourceTree = "<group>"; };
+		ED93B6DF1D854C3000A654B0 /* MSigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSigninViewController.h; sourceTree = "<group>"; };
+		ED93B6E01D854C3000A654B0 /* MSigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSigninViewController.m; sourceTree = "<group>"; };
+		ED93B6E21D854C6B00A654B0 /* MCurrentLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCurrentLocationViewController.h; sourceTree = "<group>"; };
+		ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCurrentLocationViewController.m; sourceTree = "<group>"; };
 		EDCC649D1D80578C00D77393 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC64A11D80578C00D77393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDCC64A31D80578C00D77393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +161,8 @@
 				ED1306521D83142A001DDE80 /* HomeLoc.gpx */,
 				EDCC64A31D80578C00D77393 /* AppDelegate.h */,
 				EDCC64A41D80578C00D77393 /* AppDelegate.m */,
+				ED93B6D31D84345900A654B0 /* MManager.h */,
+				ED93B6D41D84345900A654B0 /* MManager.m */,
 				EDCC64C01D8064BD00D77393 /* MConstants.h */,
 				EDCC64C11D8064BD00D77393 /* MConstants.m */,
 				EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */,
@@ -187,6 +204,14 @@
 				ED1306551D831540001DDE80 /* TLTagsControl.m */,
 				ED1306571D832011001DDE80 /* MWorkingDaysPickerController.h */,
 				ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */,
+				ED93B6D91D84565000A654B0 /* MBasicAlertController.h */,
+				ED93B6DA1D84565000A654B0 /* MBasicAlertController.m */,
+				ED93B6DC1D846F9800A654B0 /* MNearbyTableViewCell.h */,
+				ED93B6DD1D846F9800A654B0 /* MNearbyTableViewCell.m */,
+				ED93B6DF1D854C3000A654B0 /* MSigninViewController.h */,
+				ED93B6E01D854C3000A654B0 /* MSigninViewController.m */,
+				ED93B6E21D854C6B00A654B0 /* MCurrentLocationViewController.h */,
+				ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
 				EDCC64AF1D80578C00D77393 /* Assets.xcassets */,
 				EDCC64B11D80578C00D77393 /* LaunchScreen.storyboard */,
@@ -336,15 +361,20 @@
 				EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */,
 				ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */,
 				EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */,
+				ED93B6E41D854C6B00A654B0 /* MCurrentLocationViewController.m in Sources */,
 				ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */,
 				ED1306591D832011001DDE80 /* MWorkingDaysPickerController.m in Sources */,
 				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
+				ED93B6DE1D846F9800A654B0 /* MNearbyTableViewCell.m in Sources */,
 				ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */,
 				ED13063C1D829A2A001DDE80 /* MItem.m in Sources */,
+				ED93B6DB1D84565000A654B0 /* MBasicAlertController.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
 				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
+				ED93B6E11D854C3000A654B0 /* MSigninViewController.m in Sources */,
 				ED1306511D8305B4001DDE80 /* MCoordinatesPickerController.m in Sources */,
+				ED93B6D51D84345900A654B0 /* MManager.m in Sources */,
 				ED13064B1D82F3AC001DDE80 /* MLocationPickerController.m in Sources */,
 				EDCC64D51D81826700D77393 /* MItemSearchCollectionViewCell.m in Sources */,
 				ED1306561D831540001DDE80 /* TLTagsControl.m in Sources */,

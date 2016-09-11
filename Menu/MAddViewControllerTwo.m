@@ -16,6 +16,10 @@
 #import "MCoordinatesPickerController.h"
 #import "TLTagsControl.h"
 #import "MWorkingDaysPickerController.h"
+#import "UIView+Glow.h"
+#import "MRestaurant.h"
+#import "MManager.h"
+#import "MBasicAlertController.h"
 
 @interface MAddViewControllerTwo ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,TLTagsControlDelegate>
 
@@ -52,6 +56,19 @@
 @property (weak, nonatomic) IBOutlet TLTagsControl *tagControl;
 @property (weak, nonatomic) IBOutlet TLTagsControl *workingDayTagControl;
 
+@property (strong, nonatomic) NSMutableArray *workingDaysArray;
+
+@property (nonatomic, strong) UIDatePicker *fromDatePicker;
+@property (nonatomic, strong) UIDatePicker *tillDatePicker;
+
+@property (strong, nonatomic) NSString *fromTime;
+@property (strong, nonatomic) NSString *tillTime;
+
+@property (weak, nonatomic) IBOutlet UIView *restNameGlowView;
+@property (weak, nonatomic) IBOutlet UIView *addressGlowView;
+@property (weak, nonatomic) IBOutlet UIView *cityGlowView;
+@property (weak, nonatomic) IBOutlet UIView *coordinatesGlowView;
+
 @end
 
 @implementation MAddViewControllerTwo
@@ -75,6 +92,18 @@
     self.corodinatesTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.tillTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.fromTextField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
+    
+    self.restNameGlowView.layer.cornerRadius = self.restNameGlowView.frame.size.height/2;
+    self.restNameGlowView.layer.masksToBounds = YES;
+    
+    self.addressGlowView.layer.cornerRadius = self.addressGlowView.frame.size.height/2;
+    self.addressGlowView.layer.masksToBounds = YES;
+    
+    self.cityGlowView.layer.cornerRadius = self.cityGlowView.frame.size.height/2;
+    self.cityGlowView.layer.masksToBounds = YES;
+    
+    self.coordinatesGlowView.layer.cornerRadius = self.coordinatesGlowView.frame.size.height/2;
+    self.coordinatesGlowView.layer.masksToBounds = YES;
     
     self.tagControl.tapDelegate = self;
     self.tagControl.tagPlaceholder = @"type here";
@@ -110,7 +139,53 @@
     
     [self.restNameCollectionView registerNib:[UINib nibWithNibName:@"MItemSearchCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"MItemSearchCollectionViewCell"];
     [self.restNameCollectionView setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    
+    self.fromDatePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+    [self.fromDatePicker setBackgroundColor:[UIColor whiteColor]];
+    [self.fromDatePicker setDatePickerMode:UIDatePickerModeTime];
+    [self.fromDatePicker addTarget:self action:@selector(fromDatepickerChangedValue:) forControlEvents:UIControlEventValueChanged];
+    self.fromTextField.inputView = self.fromDatePicker;
+    
+    self.tillDatePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+    NSDate *currentDate = self.fromDatePicker.date;
+    NSDate *datePlusOneMinute = [currentDate dateByAddingTimeInterval:60];
+    [self.tillDatePicker setMinimumDate:datePlusOneMinute];
+    [self.tillDatePicker setBackgroundColor:[UIColor whiteColor]];
+    [self.tillDatePicker setDatePickerMode:UIDatePickerModeTime];
+    [self.tillDatePicker addTarget:self action:@selector(tillDatepickerChangedValue:) forControlEvents:UIControlEventValueChanged];
+    self.tillTextField.inputView = self.tillDatePicker;
 
+}
+
+- (void)tillDatepickerChangedValue:(UIDatePicker*)sender{
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"h:mm a"];
+    self.tillTextField.text = [outputFormatter stringFromDate:sender.date];
+    
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [outputFormatter setTimeZone:timeZone];
+    [outputFormatter setDateFormat:@"HHmm"];
+    NSString *dateString = [outputFormatter stringFromDate:sender.date];
+    
+    self.tillTime = dateString;
+}
+
+- (void)fromDatepickerChangedValue:(UIDatePicker*)sender{
+    
+    NSDate *currentDate = self.fromDatePicker.date;
+    NSDate *datePlusOneMinute = [currentDate dateByAddingTimeInterval:60];
+    [self.tillDatePicker setMinimumDate:datePlusOneMinute];
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"h:mm a"];
+    self.fromTextField.text = [outputFormatter stringFromDate:sender.date];
+    
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [outputFormatter setTimeZone:timeZone];
+    [outputFormatter setDateFormat:@"HHmm"];
+    NSString *dateString = [outputFormatter stringFromDate:sender.date];
+    
+    self.fromTime = dateString;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -134,6 +209,27 @@
     if ([[self.restArray objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
         self.selectedRestName = [self.restArray objectAtIndex:indexPath.row];
         [self.nameTextField resignFirstResponder];
+    }
+    else{
+        [self.dataTask cancel];
+        NSString *placeID = [[self.restArray objectAtIndex:indexPath.row] objectForKey:@"place_id"];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?placeid=%@&key=%@",placeID,kMGoogleServerKey];
+        NSURL *URL = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        
+        self.dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (!error) {
+                MRestaurant *restObj = [MRestaurant initWithDictionary:[responseObject objectForKey:@"result"]];
+                [MManager saveItem:self.item andRestaurant:restObj withImages:self.images];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }];
+        [self.dataTask resume];
+
     }
 }
 
@@ -183,7 +279,43 @@
 }
 
 -(void)barButtonSubmitPressed:(id)sender{
-    
+
+    if (self.selectedRestName.length==0) {
+        [self.restNameGlowView glowOnce];
+    }
+    else if (self.addressTextField.text.length==0){
+        [self.addressGlowView glowOnce];
+    }
+    else if (self.cityTextField.text.length == 0){
+        [self.cityGlowView glowOnce];
+    }
+    else if (self.corodinatesTextField.text.length == 0){
+        [self.coordinatesGlowView glowOnce];
+    }
+    else{
+        if (self.workingDayTagControl.tags.count>0) {
+            if (self.fromTime.length>0 && self.tillTime.length>0) {
+                MRestaurant *restObject = [MRestaurant initWithName:self.selectedRestName address:self.addressTextField.text coordinate:self.selectedCoordinate phonumber:self.tagControl.tags workingDays:self.workingDaysArray from:self.fromTime till:self.tillTime];
+                [MManager saveItem:self.item andRestaurant:restObject withImages:self.images];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            else{
+                MBasicAlertController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MBasicAlertController"];
+                vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+                vc.titleString = @"Time";
+                vc.messageString = @"Time is required when working days are selected";
+                [vc withCompletionHandler:^{
+                    
+                }];
+                [self presentViewController:vc animated:NO completion:nil];
+            }
+        }
+        else{
+            MRestaurant *restObject = [MRestaurant initWithName:self.selectedRestName address:self.addressTextField.text coordinate:self.selectedCoordinate phonumber:self.tagControl.tags workingDays:self.workingDaysArray from:self.fromTime till:self.tillTime];
+            [MManager saveItem:self.item andRestaurant:restObject withImages:self.images];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -191,7 +323,7 @@
         switch (textField.tag) {
             case 4:
             case 5:{
-                self.topConstrain.constant = -200;
+                self.topConstrain.constant = -166;
                 [UIView animateWithDuration:0.3 animations:^{
                     [self.view layoutIfNeeded];
                 }];
@@ -206,7 +338,7 @@
         switch (textField.tag) {
             case 4:
             case 5:{
-                self.topConstrain.constant = -250;
+                self.topConstrain.constant = -236;
                 [UIView animateWithDuration:0.3 animations:^{
                     [self.view layoutIfNeeded];
                 }];
@@ -229,7 +361,7 @@
                 break;
             case 4:
             case 5:{
-                self.topConstrain.constant = -350;
+                self.topConstrain.constant = -336;
                 [UIView animateWithDuration:0.3 animations:^{
                     [self.view layoutIfNeeded];
                 }];
@@ -252,7 +384,7 @@
                 break;
             case 4:
             case 5:{
-                self.topConstrain.constant = -440;
+                self.topConstrain.constant = -425;
                 [UIView animateWithDuration:0.3 animations:^{
                     [self.view layoutIfNeeded];
                 }];
@@ -282,13 +414,8 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     switch (textField.tag) {
-        case 0:
-            return YES;
-            break;
-        case 1:
-            return YES;
-            break;
         case 2:{
+            [self.view endEditing:YES];
             UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"MLocationPickerController"];
             MLocationPickerController *vc = nav.viewControllers[0];
             [vc withCompletionHandler:^(NSMutableDictionary *location) {
@@ -299,6 +426,7 @@
         }
             break;
         case 3:{
+            [self.view endEditing:YES];
             UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"MCoordinatesPickerController"];
             MCoordinatesPickerController *vc = nav.viewControllers[0];
             [vc withCompletionHandler:^(CLLocationCoordinate2D coordinates) {
@@ -308,15 +436,7 @@
             [self presentViewController:nav animated:YES completion:nil];
             return NO;
         }
-            
             break;
-        case 4:
-            return YES;
-            break;
-        case 5:
-            return YES;
-            break;
-            
         default:
             return YES;
             break;
@@ -339,25 +459,25 @@
 
 -(void)tagsControlDidBeginEditing:(TLTagsControl *)tagsControl{
     if (IS_IPHONE_4_OR_LESS) {
-        self.topConstrain.constant = -350;
+        self.topConstrain.constant = -327;
         [UIView animateWithDuration:0.3 animations:^{
             [self.view layoutIfNeeded];
         }];
     }
     else if (IS_IPHONE_5){
-        self.topConstrain.constant = -350;
+        self.topConstrain.constant = -327;
         [UIView animateWithDuration:0.3 animations:^{
             [self.view layoutIfNeeded];
         }];
     }
     else if (IS_IPHONE_6){
-        self.topConstrain.constant = -350;
+        self.topConstrain.constant = -175;
         [UIView animateWithDuration:0.3 animations:^{
             [self.view layoutIfNeeded];
         }];
     }
     else{
-        self.topConstrain.constant = -175;
+        self.topConstrain.constant = -70;
         [UIView animateWithDuration:0.3 animations:^{
             [self.view layoutIfNeeded];
         }];
@@ -372,6 +492,17 @@
         [self.view endEditing:YES];
         UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"MWorkingDaysPickerController"];
         MWorkingDaysPickerController *vc = [nav.viewControllers firstObject];
+        vc.workingDaysArray = self.workingDaysArray;
+        [vc withCompletionHandler:^(NSMutableArray *days) {
+            NSMutableArray *tags = [NSMutableArray new];
+            for (NSDictionary *dict in days) {
+                [tags addObject:[NSString stringWithFormat:@"%@",[[dict objectForKey:@"close"] objectForKey:@"dayName"]]];
+            }
+            self.workingDayTagControl.tags = tags;
+            self.workingDayTagControl.tagPlaceholder = @"";
+            [self.workingDayTagControl reloadTagSubviews];
+            self.workingDaysArray = days;
+        }];
         [self presentViewController:nav animated:YES completion:nil];
         return NO;
     }
@@ -379,7 +510,7 @@
 
 -(void)tagsControl:(TLTagsControl *)tagsControl didDeleteTagAtIndex:(NSInteger)index{
     if (tagsControl.tag == 1) {
-//        [self.workingDaysArray removeObjectAtIndex:index];
+        [self.workingDaysArray removeObjectAtIndex:index];
     }
 }
 

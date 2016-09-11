@@ -10,4 +10,8 @@
 
 @interface MWorkingDaysPickerController : UIViewController
 
+-(void)withCompletionHandler:(void(^)(NSMutableArray *days))handler;
+
+@property (strong, nonatomic) NSMutableArray *workingDaysArray;
+
 @end
