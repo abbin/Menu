@@ -27,7 +27,7 @@
     self.titleLabel.font = [UIFont fontWithName:[MRemoteConfig primaryFontName] size:30.0];
     self.detailedLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.okButton.titleLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
-    [self.okButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.okButton setTitleColor:[MRemoteConfig mainColor] forState:UIControlStateNormal];
     
     self.titleLabel.text = self.titleString;
     self.detailedLabel.text = self.messageString;

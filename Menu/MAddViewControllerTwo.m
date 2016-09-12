@@ -225,6 +225,7 @@
             if (!error) {
                 MRestaurant *restObj = [MRestaurant initWithDictionary:[responseObject objectForKey:@"result"]];
                 [MManager saveItem:self.item andRestaurant:restObj withImages:self.images];
+                [self.view endEditing:YES];
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
         }];
@@ -297,6 +298,7 @@
             if (self.fromTime.length>0 && self.tillTime.length>0) {
                 MRestaurant *restObject = [MRestaurant initWithName:self.selectedRestName address:self.addressTextField.text coordinate:self.selectedCoordinate phonumber:self.tagControl.tags workingDays:self.workingDaysArray from:self.fromTime till:self.tillTime];
                 [MManager saveItem:self.item andRestaurant:restObject withImages:self.images];
+                [self.view endEditing:YES];
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
             else{
@@ -313,6 +315,7 @@
         else{
             MRestaurant *restObject = [MRestaurant initWithName:self.selectedRestName address:self.addressTextField.text coordinate:self.selectedCoordinate phonumber:self.tagControl.tags workingDays:self.workingDaysArray from:self.fromTime till:self.tillTime];
             [MManager saveItem:self.item andRestaurant:restObject withImages:self.images];
+            [self.view endEditing:YES];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }

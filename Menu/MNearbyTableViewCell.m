@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cellDistanceButton;
 @property (weak, nonatomic) IBOutlet UIButton *cellRatingButton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIView *userPhotoContainer;
 
 @end
 
@@ -28,10 +29,16 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.cellItemNameLabel.font = [UIFont fontWithName:[MRemoteConfig primaryFontName] size:15.0];
+    self.cellRatingButton.backgroundColor = [MRemoteConfig mainColor];
+    self.cellItemNameLabel.font = [UIFont fontWithName:[MRemoteConfig primaryFontName] size:17.0];
     self.cellItemRestaurantNameLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
     self.cellDistanceButton.titleLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
     self.cellRatingButton.titleLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
+    self.cellUserImageView.layer.cornerRadius = self.cellUserImageView.frame.size.height/2;
+    self.cellUserImageView.layer.masksToBounds = YES;
+    self.userPhotoContainer.layer.cornerRadius = self.userPhotoContainer.frame.size.height/2;
+    self.userPhotoContainer.layer.masksToBounds = YES;
+    self.cellUserNameLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
 }
 
 -(void)setCellItem:(MItem *)cellItem{

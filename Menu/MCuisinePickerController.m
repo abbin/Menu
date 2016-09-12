@@ -60,11 +60,11 @@
     [self.cuisineQuery orderByAscending:kMCuisineNameKey];
     
     if (self.searchBar.text.length>0) {
-//        NSArray* words = [self.searchBar.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-//        NSString* trimmedString = [words componentsJoinedByString:@""];
-//        NSString *lowString = [trimmedString lowercaseString];
+        NSArray* words = [self.searchBar.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString* trimmedString = [words componentsJoinedByString:@""];
+        NSString *lowString = [trimmedString lowercaseString];
         
-        [self.cuisineQuery whereKey:kMCuisineNameKey hasPrefix:self.searchBar.text];
+        [self.cuisineQuery whereKey:kMCuisineNameKey hasPrefix:lowString];
     }
     else{
         self.cuisineQuery = [PFQuery queryWithClassName:self.parseClassName];

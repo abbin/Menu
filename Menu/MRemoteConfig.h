@@ -15,4 +15,7 @@
 
 +(NSString*)secondaryFontName;
 
++(UIColor*)mainColor;
+
++(UIColor *)mainColorSupliment;
 @end

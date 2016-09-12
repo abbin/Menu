@@ -113,9 +113,14 @@
                                 [self.navigationController pushViewController:vc animated:YES];
                             }
                             else{
-                                MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-                                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-                                [delegate changeRootViewController:vc];
+                                if ([self isModal]) {
+                                    [self dismissViewControllerAnimated:YES completion:nil];
+                                }
+                                else{
+                                    MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
+                                    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+                                    [delegate changeRootViewController:vc];
+                                }
                             }
                         }else{
                             if (error.code == 202 || error.code == 203) {
@@ -127,9 +132,14 @@
                                                                             [self.navigationController pushViewController:vc animated:YES];
                                                                         }
                                                                         else{
-                                                                            MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-                                                                            AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-                                                                            [delegate changeRootViewController:vc];
+                                                                            if ([self isModal]) {
+                                                                                [self dismissViewControllerAnimated:YES completion:nil];
+                                                                            }
+                                                                            else{
+                                                                                MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
+                                                                                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+                                                                                [delegate changeRootViewController:vc];
+                                                                            }
                                                                         }
                                                                     }
                                                                 }];
@@ -153,10 +163,21 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     else{
-        MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-        [delegate changeRootViewController:vc];
+        if ([self isModal]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else{
+            MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
+            AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+            [delegate changeRootViewController:vc];
+        }
     }
+}
+
+- (BOOL)isModal {
+    return self.presentingViewController.presentedViewController == self
+    || (self.navigationController != nil && self.navigationController.presentingViewController.presentedViewController == self.navigationController)
+    || [self.tabBarController.presentingViewController isKindOfClass:[UITabBarController class]];
 }
 
 @end

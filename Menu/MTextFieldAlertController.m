@@ -31,7 +31,7 @@
     self.detailedLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.doneButton.titleLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
     self.textField.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:12.0];
-    [self.doneButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.doneButton setTitleColor:[MRemoteConfig mainColor] forState:UIControlStateNormal];
     
     self.titileLabel.text = self.titleString;
     self.detailedLabel.text = self.messageString;

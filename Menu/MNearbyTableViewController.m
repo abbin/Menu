@@ -12,6 +12,9 @@
 #import "MRemoteConfig.h"
 #import "MAddViewControllerOne.h"
 #import "MNearbyTableViewCell.h"
+#import "MUser.h"
+#import "MSigninViewController.h"
+#import "MDetailViewController.h"
 
 @interface MNearbyTableViewController ()<YMSPhotoPickerViewControllerDelegate>
 
@@ -28,18 +31,24 @@
 }
 
 - (IBAction)addNew:(id)sender {
-    YMSPhotoPickerViewController *pickerViewController = [[YMSPhotoPickerViewController alloc] init];
-    pickerViewController.numberOfPhotoToSelect = 3;
-    
-    pickerViewController.theme.titleLabelTextColor = [UIColor blackColor];
-    pickerViewController.theme.titleLabelFont = [UIFont fontWithName:[MRemoteConfig primaryFontName] size:17.0];
-    pickerViewController.theme.cameraVeilColor = [UIColor colorWithWhite:0.5 alpha:1];
-    pickerViewController.theme.albumNameLabelFont = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
-    pickerViewController.theme.selectionOrderLabelFont = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
-    pickerViewController.theme.orderTintColor = [UIColor redColor];
-    
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pickerViewController];
-    [self yms_presentCustomAlbumPhotoView:nav delegate:self];
+    if ([MUser currentUser] == nil) {
+        MSigninViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MSigninViewController"];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else{
+        YMSPhotoPickerViewController *pickerViewController = [[YMSPhotoPickerViewController alloc] init];
+        pickerViewController.numberOfPhotoToSelect = 3;
+        
+        pickerViewController.theme.titleLabelTextColor = [UIColor whiteColor];
+        pickerViewController.theme.titleLabelFont = [UIFont fontWithName:[MRemoteConfig primaryFontName] size:17.0];
+        pickerViewController.theme.cameraVeilColor = [UIColor colorWithWhite:0.5 alpha:1];
+        pickerViewController.theme.albumNameLabelFont = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:15.0];
+        pickerViewController.theme.selectionOrderLabelFont = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
+        pickerViewController.theme.orderTintColor = [MRemoteConfig mainColorSupliment];
+        
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pickerViewController];
+        [self yms_presentCustomAlbumPhotoView:nav delegate:self];
+    }
 }
 
 - (void)photoPickerViewControllerDidReceivePhotoAlbumAccessDenied:(YMSPhotoPickerViewController *)picker
@@ -135,6 +144,12 @@
     MNearbyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MNearbyTableViewCell"];
     cell.cellItem = object;
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MDetailViewController"];
+    vc.item = [self.objects objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

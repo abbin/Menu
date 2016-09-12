@@ -8,6 +8,7 @@
 #import "UIView+Glow.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
+#import "MRemoteConfig.h"
 
 // Used to identify the associating glowing view
 static char* GLOWVIEW_KEY = "GLOWVIEW";
@@ -150,7 +151,7 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
 }
 
 - (void)glowOnce {
-    [self startGlowingOnceWithColor:[UIColor redColor] fromIntensity:0 toIntensity:0.5 repeat:YES];
+    [self startGlowingOnceWithColor:[MRemoteConfig mainColor] fromIntensity:0 toIntensity:0.5 repeat:YES];
     
     Float64 delayInSeconds = 1.1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -162,7 +163,7 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
 
 // Create a pulsing, glowing view based on this one.
 - (void) startGlowing {
-    [self startGlowingWithColor:[UIColor redColor] intensity:0.6];
+    [self startGlowingWithColor:[MRemoteConfig mainColor] intensity:0.6];
 }
 
 // Stop glowing by removing the glowing view from the superview 

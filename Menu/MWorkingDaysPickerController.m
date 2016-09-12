@@ -41,7 +41,7 @@
     self.daysArray = [[NSMutableArray alloc]init];
     
     CGFloat borderWidth = 1;
-    UIColor *color = [UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:1];
+    UIColor *color = [MRemoteConfig mainColor];
     
     self.mondayGlowView.layer.cornerRadius = self.mondayGlowView.frame.size.height/2;
     self.mondayGlowView.layer.masksToBounds = YES;

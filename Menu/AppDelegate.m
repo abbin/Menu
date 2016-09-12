@@ -26,15 +26,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[MRemoteConfig mainColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:[MRemoteConfig primaryFontName] size:17.0]}];
-    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setTranslucent:NO];
     
-    [[UITextField appearance] setTintColor:[UIColor redColor]];
+    [[UITextField appearance] setTintColor:[MRemoteConfig mainColor]];
     
     [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:[MRemoteConfig primaryFontName] size:10.0]} forState:UIControlStateNormal];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    [[UITabBar appearance] setTintColor:[MRemoteConfig mainColorSupliment]];
     
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:[MRemoteConfig primaryFontName] size:15.0]} forState:UIControlStateNormal];
     
@@ -42,8 +44,8 @@
     
 // DEVELOPMENT
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = @"D1157CB5F4084F1095F3BD12AA015104";
-        configuration.server = @"http://menudevelopment.herokuapp.com/parse";
+        configuration.applicationId = @"C4F3184BCDCD4AFC842AD0DA372399F6";
+        configuration.server = @"http://parseserver-3ix23-env.us-west-2.elasticbeanstalk.com/parse";
     }]];
     
 //// LIVE
