@@ -27,6 +27,7 @@
 @dynamic itemDistance;
 @dynamic itemOpenHours;
 @dynamic itemCuisine;
+@dynamic itemOpen;
 
 +(void)load{
     [self registerSubclass];

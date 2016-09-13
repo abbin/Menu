@@ -28,9 +28,21 @@ alpha:1.0]
     return UIColorFromRGB(0xe16060);
 }
 
++(UIColor *)ratingViewColor{
+    return UIColorFromRGB(0xD4AF37);
+}
+
 +(UIColor *)mainColor{
     return UIColorFromRGB(0xD02935);
 }
 //D93535
+
++(UIColor *)closedRed{
+    return UIColorFromRGB(0xbf0000);
+}
+
++(UIColor *)openGreen{
+    return UIColorFromRGB(0x00bf00);
+}
 
 @end

@@ -31,6 +31,7 @@ PODS:
   - GoogleMaps/Base (2.0.1)
   - GoogleMaps/Maps (2.0.1):
     - GoogleMaps/Base (= 2.0.1)
+  - HCSStarRatingView (1.4.5)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
   - ParseUI (1.2.0):
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - GoogleMaps
+  - HCSStarRatingView (~> 1.4.5)
   - Parse
   - ParseUI
   - YangMingShan
@@ -57,10 +59,11 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 96d9b70b5784490f02ab86119e542a1f182017a8
   FBSDKShareKit: 06ef20cb2f16828ca4b20055333313dd445de362
   GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
+  HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   YangMingShan: aecb8b3099624da18f1d416839a2769d3394a140
 
-PODFILE CHECKSUM: 2b2c44d5b393612f68ca322f841b972c82f840d2
+PODFILE CHECKSUM: cd5803c18ecf7ac65ecc7459f0356430850c2411
 
 COCOAPODS: 1.0.1

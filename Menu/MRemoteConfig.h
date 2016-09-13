@@ -18,4 +18,11 @@
 +(UIColor*)mainColor;
 
 +(UIColor *)mainColorSupliment;
+
++(UIColor *)closedRed;
+
++(UIColor *)openGreen;
+
++(UIColor *)ratingViewColor;
+
 @end

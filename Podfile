@@ -3,7 +3,7 @@
 
 target 'Menu' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  use_frameworks!
 
   # Pods for Menu
 
@@ -15,5 +15,6 @@ pod 'GoogleMaps'
 pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
+pod 'HCSStarRatingView', '~> 1.4.5'
 
 end

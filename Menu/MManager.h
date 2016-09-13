@@ -16,4 +16,6 @@
 
 +(BOOL)isLocationSet;
 
++(void)modifyObject:(NSArray*)itemsArray;
+
 @end

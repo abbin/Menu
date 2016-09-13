@@ -28,6 +28,7 @@
 
 @property (nonatomic, strong) NSString *itemDistance;
 @property (nonatomic, strong) NSString *itemOpenHours;
+@property (nonatomic, strong) NSNumber *itemOpen;
 
 @property (nonatomic, strong) NSMutableArray *itemImageArray;
 @property (nonatomic, strong) NSMutableArray *itemReviewArray;

@@ -38,6 +38,7 @@
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:self.manualButton.titleLabel.text attributes:linkAttributes];
     [self.manualButton.titleLabel setAttributedText:attributedString];
     [self.autoDetectButton.titleLabel setFont:[UIFont fontWithName:[MRemoteConfig primaryFontName] size:15]];
+    [self.autoDetectButton setBackgroundColor:[MRemoteConfig mainColor]];
 }
 
 - (IBAction)autoDetect:(id)sender {

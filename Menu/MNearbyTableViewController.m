@@ -15,6 +15,7 @@
 #import "MUser.h"
 #import "MSigninViewController.h"
 #import "MDetailViewController.h"
+#import "MManager.h"
 
 @interface MNearbyTableViewController ()<YMSPhotoPickerViewControllerDelegate>
 
@@ -148,8 +149,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     MDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MDetailViewController"];
-    vc.item = [self.objects objectAtIndex:indexPath.row];
+    vc.item = (MItem*)[self objectAtIndexPath:indexPath];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)objectsDidLoad:(NSError *)error{
+    [super objectsDidLoad:error];
+    [MManager modifyObject:self.objects];
 }
 
 @end
