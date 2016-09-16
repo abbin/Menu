@@ -32,6 +32,8 @@
 		ED93B6E71D8552B500A654B0 /* MTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED93B6E61D8552B500A654B0 /* MTabBarController.m */; };
 		ED93B6E91D8554AC00A654B0 /* IMG_0102.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED93B6E81D8554AC00A654B0 /* IMG_0102.mp4 */; };
 		ED93B6EB1D8575B600A654B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED93B6EA1D8575B600A654B0 /* libsqlite3.tbd */; };
+		ED9A96D21D8BD0270085599F /* MRestaurantAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A96D11D8BD0270085599F /* MRestaurantAddressTableViewCell.m */; };
+		ED9A96D81D8BEF040085599F /* MReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A96D71D8BEF040085599F /* MReviewTableViewCell.m */; };
 		EDBCA3481D8713ED0012FCAD /* MDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */; };
 		EDCC64A21D80578C00D77393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A11D80578C00D77393 /* main.m */; };
 		EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A41D80578C00D77393 /* AppDelegate.m */; };
@@ -98,6 +100,10 @@
 		ED93B6E61D8552B500A654B0 /* MTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTabBarController.m; sourceTree = "<group>"; };
 		ED93B6E81D8554AC00A654B0 /* IMG_0102.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0102.mp4; sourceTree = "<group>"; };
 		ED93B6EA1D8575B600A654B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		ED9A96D01D8BD0270085599F /* MRestaurantAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRestaurantAddressTableViewCell.h; sourceTree = "<group>"; };
+		ED9A96D11D8BD0270085599F /* MRestaurantAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRestaurantAddressTableViewCell.m; sourceTree = "<group>"; };
+		ED9A96D61D8BEF040085599F /* MReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MReviewTableViewCell.h; sourceTree = "<group>"; };
+		ED9A96D71D8BEF040085599F /* MReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MReviewTableViewCell.m; sourceTree = "<group>"; };
 		EDBCA3461D8713ED0012FCAD /* MDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDetailViewController.h; sourceTree = "<group>"; };
 		EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDetailViewController.m; sourceTree = "<group>"; };
 		EDCC649D1D80578C00D77393 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +198,10 @@
 				EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */,
 				EDBCA3461D8713ED0012FCAD /* MDetailViewController.h */,
 				EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */,
+				ED9A96D61D8BEF040085599F /* MReviewTableViewCell.h */,
+				ED9A96D71D8BEF040085599F /* MReviewTableViewCell.m */,
+				ED9A96D01D8BD0270085599F /* MRestaurantAddressTableViewCell.h */,
+				ED9A96D11D8BD0270085599F /* MRestaurantAddressTableViewCell.m */,
 				ED2950D51D8859F000CA126C /* MDetailImagesTableViewCell.h */,
 				ED2950D61D8859F000CA126C /* MDetailImagesTableViewCell.m */,
 				ED2950D21D88595D00CA126C /* MDetailCollectionViewCell.h */,
@@ -395,6 +405,7 @@
 				ED13064E1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m in Sources */,
 				EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */,
 				ED93B6E41D854C6B00A654B0 /* MCurrentLocationViewController.m in Sources */,
+				ED9A96D21D8BD0270085599F /* MRestaurantAddressTableViewCell.m in Sources */,
 				ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */,
 				ED1306591D832011001DDE80 /* MWorkingDaysPickerController.m in Sources */,
 				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
@@ -404,6 +415,7 @@
 				ED93B6DB1D84565000A654B0 /* MBasicAlertController.m in Sources */,
 				ED2950D71D8859F000CA126C /* MDetailImagesTableViewCell.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
+				ED9A96D81D8BEF040085599F /* MReviewTableViewCell.m in Sources */,
 				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
 				ED2950D11D880C3900CA126C /* MDetailMainTableViewCell.m in Sources */,

@@ -171,7 +171,9 @@
             self.selectedItemName = [self.itemsArray objectAtIndex:indexPath.row];
             [self.nameTextField resignFirstResponder];
         }
-        
+        else{
+            
+        }
     }
 }
 
