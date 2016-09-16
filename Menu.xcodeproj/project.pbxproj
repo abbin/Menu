@@ -164,6 +164,268 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		ED9A96D91D8BF74A0085599F /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				ED9A96ED1D8BF9640085599F /* Location */,
+				ED9A96EE1D8BF9690085599F /* Cuisine */,
+				ED9A96EF1D8BF9700085599F /* User */,
+				ED9A96F01D8BF9750085599F /* Item */,
+				ED9A96F11D8BF97B0085599F /* Restaurant */,
+				ED93B6D31D84345900A654B0 /* MManager.h */,
+				ED93B6D41D84345900A654B0 /* MManager.m */,
+				EDCC64C01D8064BD00D77393 /* MConstants.h */,
+				EDCC64C11D8064BD00D77393 /* MConstants.m */,
+				EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */,
+				EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		ED9A96DA1D8BF7520085599F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDCC64A91D80578C00D77393 /* SecondViewController.h */,
+				EDCC64AA1D80578C00D77393 /* SecondViewController.m */,
+				ED9A96EA1D8BF93A0085599F /* TabBar */,
+				ED9A96EB1D8BF9420085599F /* SignIn */,
+				ED9A96EC1D8BF9490085599F /* Current Location */,
+				ED9A96DD1D8BF7CB0085599F /* Add */,
+				ED9A96DB1D8BF78D0085599F /* Nearby */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ED9A96DB1D8BF78D0085599F /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+				EDCC64BD1D8061C900D77393 /* MNearbyTableViewController.h */,
+				EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */,
+				ED9A96DC1D8BF7A90085599F /* Details */,
+			);
+			name = Nearby;
+			sourceTree = "<group>";
+		};
+		ED9A96DC1D8BF7A90085599F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EDBCA3461D8713ED0012FCAD /* MDetailViewController.h */,
+				EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		ED9A96DD1D8BF7CB0085599F /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				EDCC64CC1D81421C00D77393 /* MAddViewControllerOne.h */,
+				EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */,
+				EDCC64CF1D8145B900D77393 /* MAddViewControllerTwo.h */,
+				EDCC64D01D8145B900D77393 /* MAddViewControllerTwo.m */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		ED9A96DE1D8BF7E40085599F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ED9A96E21D8BF8910085599F /* Custom */,
+				ED9A96E11D8BF83E0085599F /* Pickers */,
+				ED9A96E01D8BF7FC0085599F /* CollectionViewCell */,
+				ED9A96DF1D8BF7EA0085599F /* TableViewCell */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		ED9A96DF1D8BF7EA0085599F /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED93B6DC1D846F9800A654B0 /* MNearbyTableViewCell.h */,
+				ED93B6DD1D846F9800A654B0 /* MNearbyTableViewCell.m */,
+				ED2950CF1D880C3900CA126C /* MDetailMainTableViewCell.h */,
+				ED2950D01D880C3900CA126C /* MDetailMainTableViewCell.m */,
+				ED9A96D61D8BEF040085599F /* MReviewTableViewCell.h */,
+				ED9A96D71D8BEF040085599F /* MReviewTableViewCell.m */,
+				ED9A96D01D8BD0270085599F /* MRestaurantAddressTableViewCell.h */,
+				ED9A96D11D8BD0270085599F /* MRestaurantAddressTableViewCell.m */,
+				ED2950D51D8859F000CA126C /* MDetailImagesTableViewCell.h */,
+				ED2950D61D8859F000CA126C /* MDetailImagesTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		ED9A96E01D8BF7FC0085599F /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED2950D21D88595D00CA126C /* MDetailCollectionViewCell.h */,
+				ED2950D31D88595D00CA126C /* MDetailCollectionViewCell.m */,
+				EDCC64D21D81826700D77393 /* MItemSearchCollectionViewCell.h */,
+				EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */,
+				EDCC64D41D81826700D77393 /* MItemSearchCollectionViewCell.xib */,
+				EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */,
+				EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		ED9A96E11D8BF83E0085599F /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				ED9A96E61D8BF9120085599F /* Location */,
+				ED9A96E71D8BF91A0085599F /* Coordinates */,
+				ED9A96E81D8BF9210085599F /* Workingdays */,
+				ED9A96E91D8BF92C0085599F /* Cuisine */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
+		ED9A96E21D8BF8910085599F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				ED9A96E51D8BF9040085599F /* Glow */,
+				ED9A96E41D8BF8FB0085599F /* Tag */,
+				ED9A96E31D8BF8E90085599F /* Alert */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		ED9A96E31D8BF8E90085599F /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				ED71A61A1D81CF3100CA7F4F /* MTextFieldAlertController.h */,
+				ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */,
+				ED93B6D91D84565000A654B0 /* MBasicAlertController.h */,
+				ED93B6DA1D84565000A654B0 /* MBasicAlertController.m */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
+		ED9A96E41D8BF8FB0085599F /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				ED1306541D831540001DDE80 /* TLTagsControl.h */,
+				ED1306551D831540001DDE80 /* TLTagsControl.m */,
+			);
+			name = Tag;
+			sourceTree = "<group>";
+		};
+		ED9A96E51D8BF9040085599F /* Glow */ = {
+			isa = PBXGroup;
+			children = (
+				ED85A0FD1D8330C50023217A /* UIView+Glow.h */,
+				ED85A0FE1D8330C50023217A /* UIView+Glow.m */,
+			);
+			name = Glow;
+			sourceTree = "<group>";
+		};
+		ED9A96E61D8BF9120085599F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				ED1306491D82F3AC001DDE80 /* MLocationPickerController.h */,
+				ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		ED9A96E71D8BF91A0085599F /* Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */,
+				ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */,
+			);
+			name = Coordinates;
+			sourceTree = "<group>";
+		};
+		ED9A96E81D8BF9210085599F /* Workingdays */ = {
+			isa = PBXGroup;
+			children = (
+				ED1306571D832011001DDE80 /* MWorkingDaysPickerController.h */,
+				ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */,
+			);
+			name = Workingdays;
+			sourceTree = "<group>";
+		};
+		ED9A96E91D8BF92C0085599F /* Cuisine */ = {
+			isa = PBXGroup;
+			children = (
+				ED71A6111D81B0DA00CA7F4F /* MCuisinePickerController.h */,
+				ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */,
+			);
+			name = Cuisine;
+			sourceTree = "<group>";
+		};
+		ED9A96EA1D8BF93A0085599F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ED93B6E51D8552B500A654B0 /* MTabBarController.h */,
+				ED93B6E61D8552B500A654B0 /* MTabBarController.m */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		ED9A96EB1D8BF9420085599F /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				ED93B6DF1D854C3000A654B0 /* MSigninViewController.h */,
+				ED93B6E01D854C3000A654B0 /* MSigninViewController.m */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		ED9A96EC1D8BF9490085599F /* Current Location */ = {
+			isa = PBXGroup;
+			children = (
+				ED93B6E21D854C6B00A654B0 /* MCurrentLocationViewController.h */,
+				ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */,
+			);
+			name = "Current Location";
+			sourceTree = "<group>";
+		};
+		ED9A96ED1D8BF9640085599F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				ED13064C1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.h */,
+				ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		ED9A96EE1D8BF9690085599F /* Cuisine */ = {
+			isa = PBXGroup;
+			children = (
+				ED71A6141D81BCEA00CA7F4F /* MCuisine.h */,
+				ED71A6151D81BCEA00CA7F4F /* MCuisine.m */,
+			);
+			name = Cuisine;
+			sourceTree = "<group>";
+		};
+		ED9A96EF1D8BF9700085599F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				ED1306461D82C7C5001DDE80 /* MUser.h */,
+				ED1306471D82C7C5001DDE80 /* MUser.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		ED9A96F01D8BF9750085599F /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				ED13063A1D829A2A001DDE80 /* MItem.h */,
+				ED13063B1D829A2A001DDE80 /* MItem.m */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
+		ED9A96F11D8BF97B0085599F /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				ED1306401D829B55001DDE80 /* MRestaurant.h */,
+				ED1306411D829B55001DDE80 /* MRestaurant.m */,
+			);
+			name = Restaurant;
+			sourceTree = "<group>";
+		};
 		EDCC64941D80578C00D77393 = {
 			isa = PBXGroup;
 			children = (
@@ -188,71 +450,9 @@
 				ED1306521D83142A001DDE80 /* HomeLoc.gpx */,
 				EDCC64A31D80578C00D77393 /* AppDelegate.h */,
 				EDCC64A41D80578C00D77393 /* AppDelegate.m */,
-				ED93B6D31D84345900A654B0 /* MManager.h */,
-				ED93B6D41D84345900A654B0 /* MManager.m */,
-				EDCC64C01D8064BD00D77393 /* MConstants.h */,
-				EDCC64C11D8064BD00D77393 /* MConstants.m */,
-				EDCC64BA1D8058E300D77393 /* MRemoteConfig.h */,
-				EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */,
-				EDCC64BD1D8061C900D77393 /* MNearbyTableViewController.h */,
-				EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */,
-				EDBCA3461D8713ED0012FCAD /* MDetailViewController.h */,
-				EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */,
-				ED9A96D61D8BEF040085599F /* MReviewTableViewCell.h */,
-				ED9A96D71D8BEF040085599F /* MReviewTableViewCell.m */,
-				ED9A96D01D8BD0270085599F /* MRestaurantAddressTableViewCell.h */,
-				ED9A96D11D8BD0270085599F /* MRestaurantAddressTableViewCell.m */,
-				ED2950D51D8859F000CA126C /* MDetailImagesTableViewCell.h */,
-				ED2950D61D8859F000CA126C /* MDetailImagesTableViewCell.m */,
-				ED2950D21D88595D00CA126C /* MDetailCollectionViewCell.h */,
-				ED2950D31D88595D00CA126C /* MDetailCollectionViewCell.m */,
-				ED2950CF1D880C3900CA126C /* MDetailMainTableViewCell.h */,
-				ED2950D01D880C3900CA126C /* MDetailMainTableViewCell.m */,
-				EDCC64CC1D81421C00D77393 /* MAddViewControllerOne.h */,
-				EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */,
-				EDCC64D21D81826700D77393 /* MItemSearchCollectionViewCell.h */,
-				EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */,
-				EDCC64D41D81826700D77393 /* MItemSearchCollectionViewCell.xib */,
-				EDCC64CF1D8145B900D77393 /* MAddViewControllerTwo.h */,
-				EDCC64D01D8145B900D77393 /* MAddViewControllerTwo.m */,
-				EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */,
-				EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */,
-				EDCC64A91D80578C00D77393 /* SecondViewController.h */,
-				EDCC64AA1D80578C00D77393 /* SecondViewController.m */,
-				ED71A6111D81B0DA00CA7F4F /* MCuisinePickerController.h */,
-				ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */,
-				ED71A61A1D81CF3100CA7F4F /* MTextFieldAlertController.h */,
-				ED71A61B1D81CF3100CA7F4F /* MTextFieldAlertController.m */,
-				ED71A6141D81BCEA00CA7F4F /* MCuisine.h */,
-				ED71A6151D81BCEA00CA7F4F /* MCuisine.m */,
-				ED1306461D82C7C5001DDE80 /* MUser.h */,
-				ED1306471D82C7C5001DDE80 /* MUser.m */,
-				ED13063A1D829A2A001DDE80 /* MItem.h */,
-				ED13063B1D829A2A001DDE80 /* MItem.m */,
-				ED85A0FD1D8330C50023217A /* UIView+Glow.h */,
-				ED85A0FE1D8330C50023217A /* UIView+Glow.m */,
-				ED1306401D829B55001DDE80 /* MRestaurant.h */,
-				ED1306411D829B55001DDE80 /* MRestaurant.m */,
-				ED1306491D82F3AC001DDE80 /* MLocationPickerController.h */,
-				ED13064A1D82F3AC001DDE80 /* MLocationPickerController.m */,
-				ED13064C1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.h */,
-				ED13064D1D82FCA1001DDE80 /* NSMutableDictionary+MLocation.m */,
-				ED13064F1D8305B4001DDE80 /* MCoordinatesPickerController.h */,
-				ED1306501D8305B4001DDE80 /* MCoordinatesPickerController.m */,
-				ED1306541D831540001DDE80 /* TLTagsControl.h */,
-				ED1306551D831540001DDE80 /* TLTagsControl.m */,
-				ED1306571D832011001DDE80 /* MWorkingDaysPickerController.h */,
-				ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */,
-				ED93B6D91D84565000A654B0 /* MBasicAlertController.h */,
-				ED93B6DA1D84565000A654B0 /* MBasicAlertController.m */,
-				ED93B6DC1D846F9800A654B0 /* MNearbyTableViewCell.h */,
-				ED93B6DD1D846F9800A654B0 /* MNearbyTableViewCell.m */,
-				ED93B6DF1D854C3000A654B0 /* MSigninViewController.h */,
-				ED93B6E01D854C3000A654B0 /* MSigninViewController.m */,
-				ED93B6E21D854C6B00A654B0 /* MCurrentLocationViewController.h */,
-				ED93B6E31D854C6B00A654B0 /* MCurrentLocationViewController.m */,
-				ED93B6E51D8552B500A654B0 /* MTabBarController.h */,
-				ED93B6E61D8552B500A654B0 /* MTabBarController.m */,
+				ED9A96DE1D8BF7E40085599F /* UI */,
+				ED9A96DA1D8BF7520085599F /* ViewControllers */,
+				ED9A96D91D8BF74A0085599F /* Modal */,
 				EDCC64AC1D80578C00D77393 /* Main.storyboard */,
 				ED93B6E81D8554AC00A654B0 /* IMG_0102.mp4 */,
 				EDCC64AF1D80578C00D77393 /* Assets.xcassets */,
