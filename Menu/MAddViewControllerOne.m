@@ -15,6 +15,7 @@
 #import "MCuisinePickerController.h"
 #import "UIView+Glow.h"
 #import "MItem.h"
+#import "MReviewViewController.h"
 
 @interface MAddViewControllerOne ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,UITextFieldDelegate,UITextViewDelegate>
 
@@ -172,7 +173,9 @@
             [self.nameTextField resignFirstResponder];
         }
         else{
-            
+            [self.view endEditing:YES];
+            MReviewViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MReviewViewController"];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }
