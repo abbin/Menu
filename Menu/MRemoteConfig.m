@@ -45,4 +45,40 @@ alpha:1.0]
     return UIColorFromRGB(0x00bf00);
 }
 
++(UIColor *)colorOne{
+    return UIColorFromRGB(0xcd1c26);
+}
+
++(UIColor *)colorOnePointFive{
+    return UIColorFromRGB(0xde1d0f);
+}
+
++(UIColor *)colorTwo{
+    return UIColorFromRGB(0xff7800);
+}
+
++(UIColor *)colorTwoPointFive{
+    return UIColorFromRGB(0xffba00);
+}
+
++(UIColor *)colorThree{
+    return UIColorFromRGB(0xcdd614);
+}
+
++(UIColor *)colorThreePointFive{
+    return UIColorFromRGB(0x9acd32);
+}
+
++(UIColor *)colorFour{
+    return UIColorFromRGB(0x5ba829);
+}
+
++(UIColor *)colorFourPointFive{
+    return UIColorFromRGB(0x3f7e00);
+}
+
++(UIColor *)colorFive{
+    return UIColorFromRGB(0x305d02);
+}
+
 @end

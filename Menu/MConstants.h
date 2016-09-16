@@ -27,6 +27,8 @@ FOUNDATION_EXPORT NSString *const kMItemsClassNameKey;
 FOUNDATION_EXPORT NSString *const kMItemsUserKey;
 FOUNDATION_EXPORT NSString *const kMItemRestaurantKey;
 
+FOUNDATION_EXPORT NSString *const kMRatingUserKey;
+
 FOUNDATION_EXPORT NSString *const kMCuisineClassNameKey;
 FOUNDATION_EXPORT NSString *const kMRestaurantClassNameKey;
 
@@ -46,5 +48,7 @@ FOUNDATION_EXPORT NSString *const kMItemImageVoteKey;
 
 FOUNDATION_EXPORT NSString *const kMSaveCompleteNotificationKey;
 FOUNDATION_EXPORT NSString *const kMSaveFailNotificationKey;
+
+FOUNDATION_EXPORT NSString *const kMReviewClassNameKey;
 
 @end

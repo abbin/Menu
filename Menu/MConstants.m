@@ -14,7 +14,9 @@ NSString *const kMItemsClassNameKey                  = @"items";
 
 NSString *const kMItemsUserKey                  = @"itemUser";
 NSString *const kMItemRestaurantKey                  = @"itemRestaurant";
+NSString *const kMRatingUserKey                  = @"ratingUser";
 
+NSString *const kMReviewClassNameKey           = @"reviews";
 NSString *const kMCuisineClassNameKey                = @"cuisines";
 NSString *const kMRestaurantClassNameKey                = @"restaurants";
 

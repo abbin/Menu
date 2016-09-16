@@ -7,7 +7,7 @@
 //
 
 #import "MAddViewControllerOne.h"
-#import "MImageCollectionViewCell.h"
+#import "MImageViewCollectionViewCell.h"
 #import "MRemoteConfig.h"
 #import "MAddViewControllerTwo.h"
 #import "MConstants.h"
@@ -35,6 +35,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstrain;
 @property (nonatomic, strong) UICollectionView *itemNameCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *imagesPreviewCollectionView;
 
 @property (nonatomic, strong) NSMutableArray *itemsArray;
 @property (nonatomic, strong) NSString *selectedItemName;
@@ -51,8 +52,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.imagesPreviewCollectionView registerNib:[UINib nibWithNibName:@"MImageViewCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"MImageViewCollectionViewCell"];
+    
     self.query = [PFQuery queryWithClassName:kMItemsClassNameKey];
     [self.query includeKeys:@[kMItemsUserKey,kMItemRestaurantKey]];
+    self.query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     self.nameHeaderLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
     self.cuisineHeaderLabel.font = [UIFont fontWithName:[MRemoteConfig secondaryFontName] size:10.0];
@@ -147,8 +151,8 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView.tag == 0) {
-        MImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MImageCollectionViewCell" forIndexPath:indexPath];
-        cell.cellImageView.image = [self.images objectAtIndex:indexPath.row];
+        MImageViewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MImageViewCollectionViewCell" forIndexPath:indexPath];
+        cell.cellImage = [self.images objectAtIndex:indexPath.row];
         return cell;
     }
     else{
@@ -173,8 +177,10 @@
             [self.nameTextField resignFirstResponder];
         }
         else{
-            [self.view endEditing:YES];
             MReviewViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MReviewViewController"];
+            vc.images = self.images;
+            vc.item = [self.itemsArray objectAtIndex:indexPath.row];
+            [self.view endEditing:YES];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
@@ -183,7 +189,7 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView.tag == 0) {
         UIImage *image = [self.images objectAtIndex:indexPath.row];
-        return CGSizeMake((collectionView.frame.size.height*image.size.width/image.size.height)-2, collectionView.frame.size.height-2);
+        return CGSizeMake((collectionView.frame.size.height*image.size.width/image.size.height)-5, collectionView.frame.size.height-5);
     }
     else{
         return CGSizeMake(1, 1);

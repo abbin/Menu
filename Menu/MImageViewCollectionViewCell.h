@@ -10,4 +10,7 @@
 
 @interface MImageViewCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) NSDictionary *imageDictionary;
+@property (nonatomic, strong) UIImage *cellImage;
+
 @end

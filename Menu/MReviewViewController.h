@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MItem.h"
 
 @interface MReviewViewController : UIViewController
+
+@property (nonatomic, strong) NSArray *images;
+@property (nonatomic, strong) MItem *item;
 
 @end

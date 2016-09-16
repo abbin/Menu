@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MReview.h"
 
 @interface MReviewTableViewCell : UITableViewCell
+
+@property (nonatomic, strong)MReview *review;
 
 @end
