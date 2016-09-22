@@ -7,19 +7,13 @@
 //
 
 #import "MDetailImagesTableViewCell.h"
-#import "MImageViewCollectionViewCell.h"
-
-@interface MDetailImagesTableViewCell ()
-
-@property (weak, nonatomic) IBOutlet UICollectionView *imagePreviewCollectionView;
-
-@end
+#import "MDetailCollectionViewCell.h"
 
 @implementation MDetailImagesTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self.imagePreviewCollectionView registerNib:[UINib nibWithNibName:@"MImageViewCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"MImageViewCollectionViewCell"];
+    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -33,8 +27,8 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    MImageViewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MImageViewCollectionViewCell" forIndexPath:indexPath];
-    cell.imageDictionary = [self.images objectAtIndex:indexPath.row];
+    MDetailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MDetailCollectionViewCell" forIndexPath:indexPath];
+    cell.imageDict = [self.images objectAtIndex:indexPath.row];
     return cell;
 }
 

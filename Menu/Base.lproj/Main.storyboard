@@ -509,7 +509,33 @@
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
-                                                    <cells/>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MDetailCollectionViewCell" id="Iwy-fx-yfj" customClass="MDetailCollectionViewCell">
+                                                            <rect key="frame" x="0.0" y="17" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nlM-Wp-eSC" customClass="PFImageView">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="nlM-Wp-eSC" secondAttribute="bottom" id="GBP-CF-6eg"/>
+                                                                <constraint firstItem="nlM-Wp-eSC" firstAttribute="leading" secondItem="Iwy-fx-yfj" secondAttribute="leading" id="SM7-1k-EMB"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nlM-Wp-eSC" secondAttribute="trailing" id="ZQd-8Y-Gvd"/>
+                                                                <constraint firstItem="nlM-Wp-eSC" firstAttribute="top" secondItem="Iwy-fx-yfj" secondAttribute="top" id="nvs-j3-SPN"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="cellImageView" destination="nlM-Wp-eSC" id="eSJ-5A-rey"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="pfR-i1-cvQ" id="hUp-rS-10l"/>
                                                         <outlet property="delegate" destination="pfR-i1-cvQ" id="h7p-Xm-TTY"/>
@@ -524,9 +550,6 @@
                                                 <constraint firstItem="CxV-lu-B0Y" firstAttribute="top" secondItem="sBE-gT-ngJ" secondAttribute="topMargin" id="zBH-F8-ODY"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imagePreviewCollectionView" destination="CxV-lu-B0Y" id="hTR-qN-otX"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MRestaurantAddressTableViewCell" rowHeight="75" id="x9l-UG-SFJ" customClass="MRestaurantAddressTableViewCell">
                                         <rect key="frame" x="0.0" y="386" width="375" height="75"/>
@@ -649,14 +672,6 @@
                                                 <constraint firstItem="Rln-27-Vl3" firstAttribute="height" secondItem="N8o-c5-pIC" secondAttribute="height" id="p9f-Zg-T7d"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="cellRatingButton" destination="XIw-Ab-XIN" id="wib-uh-czQ"/>
-                                            <outlet property="cellReviewTextLabel" destination="Eio-Kn-b52" id="yak-Kd-JmH"/>
-                                            <outlet property="cellTimeLabel" destination="Xbs-wi-CAH" id="GSs-kb-e1E"/>
-                                            <outlet property="cellUserDetailsLabel" destination="Rln-27-Vl3" id="5Xh-qI-Ya8"/>
-                                            <outlet property="cellUserImageView" destination="WFx-dO-x7C" id="dGq-5R-AVZ"/>
-                                            <outlet property="cellUserNamewLabel" destination="N8o-c5-pIC" id="GSQ-8I-07o"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -683,10 +698,10 @@
             </objects>
             <point key="canvasLocation" x="2746.5" y="-320"/>
         </scene>
-        <!--Review-->
+        <!--Review View Controller-->
         <scene sceneID="ysl-AW-EZK">
             <objects>
-                <viewController storyboardIdentifier="MReviewViewController" title="Review" id="kzC-Td-qu6" customClass="MReviewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MReviewViewController" id="kzC-Td-qu6" customClass="MReviewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3fB-iJ-mSI"/>
                         <viewControllerLayoutGuide type="bottom" id="6ou-HM-a9a"/>
@@ -694,6 +709,7 @@
                     <view key="view" contentMode="scaleToFill" id="PBd-42-AkP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<<<<<<< HEAD
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-46-iDH">
                                 <subviews>
@@ -862,39 +878,12 @@
                             <constraint firstItem="bOv-qH-RVv" firstAttribute="width" secondItem="PBd-42-AkP" secondAttribute="width" id="a6q-pg-ZBv"/>
                             <constraint firstItem="kFc-46-iDH" firstAttribute="leading" secondItem="PBd-42-AkP" secondAttribute="leading" id="jwL-qL-0Nc"/>
                         </constraints>
+=======
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+>>>>>>> parent of b8f7a90... Comm
                     </view>
-                    <connections>
-                        <outlet property="five" destination="sfv-OL-M4z" id="VST-3S-p3M"/>
-                        <outlet property="four" destination="4s7-UW-FrQ" id="sG9-70-sH6"/>
-                        <outlet property="fourPointFive" destination="ofg-ve-Qtg" id="bYW-KM-387"/>
-                        <outlet property="imagePreviewCollectionView" destination="f8C-wZ-Lu6" id="0h3-41-JQB"/>
-                        <outlet property="one" destination="aqM-0l-OHw" id="6SF-gj-g4L"/>
-                        <outlet property="onePointFive" destination="5lV-88-ehq" id="OC2-yW-G5a"/>
-                        <outlet property="reviewTextView" destination="miz-II-BDT" id="AGA-A6-G4e"/>
-                        <outlet property="reviewTouchPad" destination="Zgi-1Z-mpl" id="mXX-Vv-kqv"/>
-                        <outlet property="three" destination="quJ-fE-z8B" id="HMP-cH-9v8"/>
-                        <outlet property="threePointFive" destination="xoN-An-uN0" id="kpg-kQ-pft"/>
-                        <outlet property="topConstrain" destination="ePQ-AS-TTm" id="trk-6b-QXi"/>
-                        <outlet property="two" destination="NVW-bO-Uob" id="khJ-b5-D7a"/>
-                        <outlet property="twoPointFive" destination="gLu-ct-3fU" id="htS-Lg-Dxs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpr-Ie-ARz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="ipl-9G-I5q">
-                    <connections>
-                        <action selector="didPanOnView:" destination="kzC-Td-qu6" id="0dN-uf-g2B"/>
-                    </connections>
-                </panGestureRecognizer>
-                <tapGestureRecognizer id="Pbi-5E-wq8">
-                    <connections>
-                        <action selector="didTapOnView:" destination="kzC-Td-qu6" id="WB6-5m-LMK"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="JP3-Fj-7TG">
-                    <connections>
-                        <action selector="didTapOnBackgroundView:" destination="kzC-Td-qu6" id="KPS-Za-oNX"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2849" y="-1732"/>
         </scene>
@@ -915,14 +904,48 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOY-5K-Ume">
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFG-qZ-7uG">
+<<<<<<< HEAD
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Gxm-vQ-4nG">
+=======
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gxm-vQ-4nG">
+>>>>>>> parent of b8f7a90... Comm
                                                     <size key="itemSize" width="115" height="111"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
-                                                <cells/>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MImageCollectionViewCell" id="fiO-XQ-jQD" customClass="MImageCollectionViewCell">
+                                                        <rect key="frame" x="0.0" y="35" width="115" height="111"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="111"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8eX-NQ-lXY">
+                                                                    <rect key="frame" x="5" y="5" width="105" height="101"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="8eX-NQ-lXY" firstAttribute="top" secondItem="fiO-XQ-jQD" secondAttribute="top" constant="5" id="2Y5-fM-Yd9"/>
+                                                            <constraint firstItem="8eX-NQ-lXY" firstAttribute="leading" secondItem="fiO-XQ-jQD" secondAttribute="leading" constant="5" id="Eqf-Nz-Bcg"/>
+                                                            <constraint firstItem="8eX-NQ-lXY" firstAttribute="top" secondItem="fiO-XQ-jQD" secondAttribute="top" constant="5" id="FGi-7S-hsh"/>
+                                                            <constraint firstItem="8eX-NQ-lXY" firstAttribute="leading" secondItem="fiO-XQ-jQD" secondAttribute="leading" constant="5" id="IgT-dE-ELv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="8eX-NQ-lXY" secondAttribute="bottom" constant="5" id="PcO-yO-a8t"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8eX-NQ-lXY" secondAttribute="trailing" constant="5" id="SwS-a9-aEF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8eX-NQ-lXY" secondAttribute="trailing" constant="5" id="V2p-Te-sDg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="8eX-NQ-lXY" secondAttribute="bottom" constant="5" id="oX3-hC-oUC"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="cellImageView" destination="8eX-NQ-lXY" id="dJW-Im-TQv"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
                                                 <connections>
                                                     <outlet property="dataSource" destination="aHo-ft-rFj" id="RNi-uR-DKo"/>
                                                     <outlet property="delegate" destination="aHo-ft-rFj" id="orG-Uc-kK3"/>
@@ -1116,7 +1139,6 @@
                         <outlet property="cuisineTextField" destination="bcI-Yh-v6r" id="PLH-uf-cqN"/>
                         <outlet property="descriptionTextView" destination="06J-HI-DhQ" id="JgD-W7-vcW"/>
                         <outlet property="descriptionheaderLabel" destination="koR-Ne-LFs" id="v4S-Zk-0rS"/>
-                        <outlet property="imagesPreviewCollectionView" destination="aFG-qZ-7uG" id="Lxm-8q-pRu"/>
                         <outlet property="nameGlowView" destination="RZo-ya-1SO" id="hKa-6i-CEG"/>
                         <outlet property="nameHeaderLabel" destination="b2y-Sg-5WD" id="vYS-BE-B3L"/>
                         <outlet property="nameTextField" destination="6vI-ei-GYZ" id="Scv-ut-Il9"/>

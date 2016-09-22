@@ -28,6 +28,7 @@
 
 +(MRestaurant*)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate phonumber:(NSMutableArray*)phoneNumber workingDays:(NSMutableArray*)workingDays from:(NSString*)from till:(NSString*)till{
     MRestaurant *restObj = [MRestaurant object];
+    
     restObj.restaurantName = name;
     restObj.restaurantAddress = address;
     restObj.restaurantLocation = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];

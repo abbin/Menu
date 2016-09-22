@@ -9,94 +9,15 @@
 #import "MManager.h"
 #import "MConstants.h"
 #import "NSMutableDictionary+MLocation.h"
-#import "MReview.h"
 
 @implementation MManager
-
-+(NSMutableArray*)addArrayP:(NSArray*)newArray toOldArray:(NSMutableArray*)oldArray{
-    NSSortDescriptor *voteDescriptor = [NSSortDescriptor sortDescriptorWithKey:kMItemImageVoteKey ascending:NO];
-    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:kMItemImageTimeStampKey ascending:NO];
-    
-    NSMutableArray *finalArray = [NSMutableArray new];
-    NSMutableArray *existingArray = oldArray;
-    
-    [existingArray sortUsingDescriptors:@[voteDescriptor,dateDescriptor]];
-    [finalArray addObjectsFromArray:[existingArray subarrayWithRange:NSMakeRange(0, MIN(5,existingArray.count))]];
-    
-    [existingArray removeObjectsInRange:NSMakeRange(0, MIN(5,existingArray.count))];
-    [existingArray addObjectsFromArray:newArray];
-    [existingArray sortUsingDescriptors:@[dateDescriptor]];
-    [finalArray addObjectsFromArray:existingArray];
-    
-    NSArray *result = [finalArray subarrayWithRange:NSMakeRange(0, MIN(10, finalArray.count))];
-    [finalArray removeObjectsInRange:NSMakeRange(0, MIN(10, finalArray.count))];
-    //    for (NSDictionary *dict in finalArray) {
-    //        FIRStorageReference *storageRefdel = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@%@",kFAStoragePathKey,[dict objectForKey:kFAItemImagesPathKey]]];
-    //        // Delete the file
-    //        [storageRefdel deleteWithCompletion:^(NSError *error){
-    //            if (error) {
-    //                [FAAnalyticsManager logEventWithName:kFAAnalyticsFailureKey
-    //                                          parameters:@{kFAAnalyticsReasonKey:error.localizedDescription,
-    //                                                       kFAAnalyticsSectionKey:kFAAnalyticsStorageDeleteTaskKey}];
-    //            }
-    //        }];
-    //    }
-    return [result mutableCopy];
-}
-
-+(void)saveReview:(NSString*)review rating:(float)rating forItem:(MItem*)item withImages:(NSArray*)images{
-    
-    NSNumber *timeStamp = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
-    NSMutableArray *imageArray = [NSMutableArray new];
-    for (UIImage *image in images) {
-        NSLog(@"File size is : %.2f MB",(float)UIImageJPEGRepresentation(image, 0.5).length/1024.0f/1024.0f);
-        NSDictionary *dict = @{kMItemImageFileKey:[PFFile fileWithName:@"name.jpeg" data:UIImageJPEGRepresentation(image, 0.5)],
-                               kMItemImageTimeStampKey:timeStamp,
-                               kMItemImageVoteKey:[NSNumber numberWithUnsignedLong:0]};
-        [imageArray addObject:dict];
-    }
-    item.itemImageArray = [self addArrayP:imageArray toOldArray:item.itemImageArray];
-    NSMutableArray *reviewArray = item.itemReviewArray;
-    if (reviewArray == nil) {
-        reviewArray = [NSMutableArray new];
-    }
-    
-    MReview *reviewObject = [MReview object];
-    reviewObject.reviewText = review;
-    reviewObject.ratingUser = [MUser currentUser];
-    reviewObject.reviewRating = [NSNumber numberWithFloat:rating];
-    reviewObject.reviewTimeStamp = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
-    
-    [reviewArray addObject:reviewObject];
-    
-    item.itemReviewArray = reviewArray;
-    
-    if (item.itemRating) {
-        float oldRting = [item.itemRating floatValue];
-        float newRating = (oldRting + rating)/2;
-        item.itemRating = [NSNumber numberWithFloat:newRating];
-    }
-    else{
-        item.itemRating = [NSNumber numberWithFloat:rating];
-    }
-    [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kMSaveFailNotificationKey object:self];
-        }
-        else{
-            NSDictionary *object = [NSDictionary dictionaryWithObjectsAndKeys:item,@"object", nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kMSaveCompleteNotificationKey object:self userInfo:object];
-        }
-    }];
-}
-
 
 +(void)saveItem:(MItem*)item andRestaurant:(MRestaurant*)restaurant withImages:(NSArray*)images{
     
     NSNumber *timeStamp = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
     NSMutableArray *imageArray = [NSMutableArray new];
     for (UIImage *image in images) {
-        NSDictionary *dict = @{kMItemImageFileKey:[PFFile fileWithName:@"name.jpeg" data:UIImageJPEGRepresentation(image, 0.1)],
+        NSDictionary *dict = @{kMItemImageFileKey:[PFFile fileWithName:@"name.jpeg" data:UIImageJPEGRepresentation(image, 0.5)],
                                kMItemImageTimeStampKey:timeStamp,
                                kMItemImageVoteKey:[NSNumber numberWithUnsignedLong:0]};
         [imageArray addObject:dict];

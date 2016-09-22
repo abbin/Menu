@@ -18,6 +18,7 @@
 		ED1306561D831540001DDE80 /* TLTagsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306551D831540001DDE80 /* TLTagsControl.m */; };
 		ED1306591D832011001DDE80 /* MWorkingDaysPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */; };
 		ED2950D11D880C3900CA126C /* MDetailMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2950D01D880C3900CA126C /* MDetailMainTableViewCell.m */; };
+		ED2950D41D88595D00CA126C /* MDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2950D31D88595D00CA126C /* MDetailCollectionViewCell.m */; };
 		ED2950D71D8859F000CA126C /* MDetailImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2950D61D8859F000CA126C /* MDetailImagesTableViewCell.m */; };
 		ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6121D81B0DA00CA7F4F /* MCuisinePickerController.m */; };
 		ED71A6161D81BCEA00CA7F4F /* MCuisine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71A6151D81BCEA00CA7F4F /* MCuisine.m */; };
@@ -36,7 +37,6 @@
 		ED9A96F51D8BF9F60085599F /* MReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A96F41D8BF9F60085599F /* MReviewViewController.m */; };
 		ED9A96F91D8BFC460085599F /* MImageViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A96F71D8BFC460085599F /* MImageViewCollectionViewCell.m */; };
 		ED9A96FA1D8BFC460085599F /* MImageViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9A96F81D8BFC460085599F /* MImageViewCollectionViewCell.xib */; };
-		ED9A96FD1D8C35F30085599F /* MReview.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A96FC1D8C35F30085599F /* MReview.m */; };
 		EDBCA3481D8713ED0012FCAD /* MDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */; };
 		EDCC64A21D80578C00D77393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A11D80578C00D77393 /* main.m */; };
 		EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64A41D80578C00D77393 /* AppDelegate.m */; };
@@ -47,6 +47,7 @@
 		EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64BB1D8058E300D77393 /* MRemoteConfig.m */; };
 		EDCC64BF1D8061C900D77393 /* MNearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */; };
 		EDCC64C21D8064BD00D77393 /* MConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64C11D8064BD00D77393 /* MConstants.m */; };
+		EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */; };
 		EDCC64CE1D81421C00D77393 /* MAddViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */; };
 		EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64D01D8145B900D77393 /* MAddViewControllerTwo.m */; };
 		EDCC64D51D81826700D77393 /* MItemSearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */; };
@@ -76,6 +77,8 @@
 		ED1306581D832011001DDE80 /* MWorkingDaysPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWorkingDaysPickerController.m; sourceTree = "<group>"; };
 		ED2950CF1D880C3900CA126C /* MDetailMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDetailMainTableViewCell.h; sourceTree = "<group>"; };
 		ED2950D01D880C3900CA126C /* MDetailMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDetailMainTableViewCell.m; sourceTree = "<group>"; };
+		ED2950D21D88595D00CA126C /* MDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDetailCollectionViewCell.h; sourceTree = "<group>"; };
+		ED2950D31D88595D00CA126C /* MDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDetailCollectionViewCell.m; sourceTree = "<group>"; };
 		ED2950D51D8859F000CA126C /* MDetailImagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDetailImagesTableViewCell.h; sourceTree = "<group>"; };
 		ED2950D61D8859F000CA126C /* MDetailImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDetailImagesTableViewCell.m; sourceTree = "<group>"; };
 		ED71A6111D81B0DA00CA7F4F /* MCuisinePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCuisinePickerController.h; sourceTree = "<group>"; };
@@ -109,8 +112,6 @@
 		ED9A96F61D8BFC460085599F /* MImageViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImageViewCollectionViewCell.h; sourceTree = "<group>"; };
 		ED9A96F71D8BFC460085599F /* MImageViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImageViewCollectionViewCell.m; sourceTree = "<group>"; };
 		ED9A96F81D8BFC460085599F /* MImageViewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MImageViewCollectionViewCell.xib; sourceTree = "<group>"; };
-		ED9A96FB1D8C35F30085599F /* MReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MReview.h; sourceTree = "<group>"; };
-		ED9A96FC1D8C35F30085599F /* MReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MReview.m; sourceTree = "<group>"; };
 		EDBCA3461D8713ED0012FCAD /* MDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDetailViewController.h; sourceTree = "<group>"; };
 		EDBCA3471D8713ED0012FCAD /* MDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDetailViewController.m; sourceTree = "<group>"; };
 		EDCC649D1D80578C00D77393 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +130,8 @@
 		EDCC64BE1D8061C900D77393 /* MNearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNearbyTableViewController.m; sourceTree = "<group>"; };
 		EDCC64C01D8064BD00D77393 /* MConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MConstants.h; sourceTree = "<group>"; };
 		EDCC64C11D8064BD00D77393 /* MConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MConstants.m; sourceTree = "<group>"; };
+		EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImageCollectionViewCell.h; sourceTree = "<group>"; };
+		EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImageCollectionViewCell.m; sourceTree = "<group>"; };
 		EDCC64CC1D81421C00D77393 /* MAddViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAddViewControllerOne.h; sourceTree = "<group>"; };
 		EDCC64CD1D81421C00D77393 /* MAddViewControllerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAddViewControllerOne.m; sourceTree = "<group>"; };
 		EDCC64CF1D8145B900D77393 /* MAddViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAddViewControllerTwo.h; sourceTree = "<group>"; };
@@ -172,7 +175,6 @@
 		ED9A96D91D8BF74A0085599F /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				ED9A96FE1D8C35FD0085599F /* Review */,
 				ED9A96ED1D8BF9640085599F /* Location */,
 				ED9A96EE1D8BF9690085599F /* Cuisine */,
 				ED9A96EF1D8BF9700085599F /* User */,
@@ -264,9 +266,13 @@
 		ED9A96E01D8BF7FC0085599F /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				ED2950D21D88595D00CA126C /* MDetailCollectionViewCell.h */,
+				ED2950D31D88595D00CA126C /* MDetailCollectionViewCell.m */,
 				EDCC64D21D81826700D77393 /* MItemSearchCollectionViewCell.h */,
 				EDCC64D31D81826700D77393 /* MItemSearchCollectionViewCell.m */,
 				EDCC64D41D81826700D77393 /* MItemSearchCollectionViewCell.xib */,
+				EDCC64C61D8071C100D77393 /* MImageCollectionViewCell.h */,
+				EDCC64C71D8071C100D77393 /* MImageCollectionViewCell.m */,
 				ED9A96F61D8BFC460085599F /* MImageViewCollectionViewCell.h */,
 				ED9A96F71D8BFC460085599F /* MImageViewCollectionViewCell.m */,
 				ED9A96F81D8BFC460085599F /* MImageViewCollectionViewCell.xib */,
@@ -437,15 +443,6 @@
 			children = (
 				ED9A96F31D8BF9F60085599F /* MReviewViewController.h */,
 				ED9A96F41D8BF9F60085599F /* MReviewViewController.m */,
-			);
-			name = Review;
-			sourceTree = "<group>";
-		};
-		ED9A96FE1D8C35FD0085599F /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				ED9A96FB1D8C35F30085599F /* MReview.h */,
-				ED9A96FC1D8C35F30085599F /* MReview.m */,
 			);
 			name = Review;
 			sourceTree = "<group>";
@@ -635,13 +632,13 @@
 				ED9A96D21D8BD0270085599F /* MRestaurantAddressTableViewCell.m in Sources */,
 				ED71A6131D81B0DA00CA7F4F /* MCuisinePickerController.m in Sources */,
 				ED1306591D832011001DDE80 /* MWorkingDaysPickerController.m in Sources */,
+				EDCC64C81D8071C100D77393 /* MImageCollectionViewCell.m in Sources */,
 				ED93B6DE1D846F9800A654B0 /* MNearbyTableViewCell.m in Sources */,
 				ED71A61C1D81CF3100CA7F4F /* MTextFieldAlertController.m in Sources */,
 				ED13063C1D829A2A001DDE80 /* MItem.m in Sources */,
 				ED93B6DB1D84565000A654B0 /* MBasicAlertController.m in Sources */,
 				ED2950D71D8859F000CA126C /* MDetailImagesTableViewCell.m in Sources */,
 				EDCC64A51D80578C00D77393 /* AppDelegate.m in Sources */,
-				ED9A96FD1D8C35F30085599F /* MReview.m in Sources */,
 				ED9A96D81D8BEF040085599F /* MReviewTableViewCell.m in Sources */,
 				EDCC64D11D8145B900D77393 /* MAddViewControllerTwo.m in Sources */,
 				EDCC64A21D80578C00D77393 /* main.m in Sources */,
@@ -656,6 +653,7 @@
 				ED1306561D831540001DDE80 /* TLTagsControl.m in Sources */,
 				ED1306421D829B55001DDE80 /* MRestaurant.m in Sources */,
 				EDCC64BC1D8058E300D77393 /* MRemoteConfig.m in Sources */,
+				ED2950D41D88595D00CA126C /* MDetailCollectionViewCell.m in Sources */,
 				ED9A96F91D8BFC460085599F /* MImageViewCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

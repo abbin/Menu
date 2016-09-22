@@ -14,8 +14,6 @@
 
 +(void)saveItem:(MItem*)item andRestaurant:(MRestaurant*)restaurant withImages:(NSArray*)images;
 
-+(void)saveReview:(NSString*)review rating:(float)rating forItem:(MItem*)item withImages:(NSArray*)images;
-
 +(BOOL)isLocationSet;
 
 +(void)modifyObject:(NSArray*)itemsArray;

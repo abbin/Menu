@@ -12,7 +12,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-gP-4Nc" customClass="PFImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-gP-4Nc">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
                 </subviews>
@@ -24,9 +24,6 @@
                 <constraint firstItem="1rL-gP-4Nc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="o4n-6Y-tRc"/>
                 <constraint firstAttribute="trailing" secondItem="1rL-gP-4Nc" secondAttribute="trailing" id="rh7-cR-A4K"/>
             </constraints>
-            <connections>
-                <outlet property="cellImageView" destination="1rL-gP-4Nc" id="yhX-Cq-qXI"/>
-            </connections>
         </collectionViewCell>
     </objects>
 </document>

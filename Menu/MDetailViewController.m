@@ -75,7 +75,7 @@
         return self.item.itemRestaurant.restaurantPhoneNumbers.count;
     }
     else if (section == _indexReview){
-        return MIN(2, self.item.itemReviewArray.count);
+        return MIN(3, self.item.itemReviewArray.count+1);
     }
     else{
         return 1;
@@ -136,7 +136,6 @@
     }
     else if (indexPath.section == _indexReview){
         MReviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MReviewTableViewCell"];
-        cell.review = [self.item.itemReviewArray objectAtIndex:indexPath.row];
         return cell;
     }
     else{

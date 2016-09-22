@@ -131,7 +131,7 @@
 - (PFQuery *)queryForTable {
     
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query includeKeys:@[kMItemsUserKey,kMItemRestaurantKey,@"itemRating"]];
+    [query includeKeys:@[kMItemsUserKey,kMItemRestaurantKey]];
     
     if (self.objects.count == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;

@@ -25,22 +25,4 @@
 
 +(UIColor *)ratingViewColor;
 
-+(UIColor *)colorOne;
-
-+(UIColor *)colorOnePointFive;
-
-+(UIColor *)colorTwo;
-
-+(UIColor *)colorTwoPointFive;
-
-+(UIColor *)colorThree;
-
-+(UIColor *)colorThreePointFive;
-
-+(UIColor *)colorFour;
-
-+(UIColor *)colorFourPointFive;
-
-+(UIColor *)colorFive;
-
 @end
