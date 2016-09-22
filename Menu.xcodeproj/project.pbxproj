@@ -530,6 +530,7 @@
 				TargetAttributes = {
 					EDCC649C1D80578C00D77393 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EDXP6Y48QS;
 					};
 				};
 			};
@@ -768,6 +769,7 @@
 			baseConfigurationReference = CEA49599CDE7B22AF41937D6 /* Pods-Menu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = Menu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -781,6 +783,7 @@
 			baseConfigurationReference = D5BDAA1F0A6FB7032E25392E /* Pods-Menu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = Menu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

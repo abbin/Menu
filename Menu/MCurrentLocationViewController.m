@@ -61,7 +61,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         [delegate changeRootViewController:vc];
     }];
     [self presentViewController:nav animated:YES completion:nil];
@@ -94,7 +94,7 @@
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 
                 MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+                AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
                 [delegate changeRootViewController:vc];
             }
         } ];

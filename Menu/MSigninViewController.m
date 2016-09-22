@@ -118,7 +118,7 @@
                                 }
                                 else{
                                     MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-                                    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+                                    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
                                     [delegate changeRootViewController:vc];
                                 }
                             }
@@ -137,7 +137,7 @@
                                                                             }
                                                                             else{
                                                                                 MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-                                                                                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+                                                                                AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
                                                                                 [delegate changeRootViewController:vc];
                                                                             }
                                                                         }
@@ -168,7 +168,7 @@
         }
         else{
             MTabBarController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MTabBarController"];
-            AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+            AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
             [delegate changeRootViewController:vc];
         }
     }
