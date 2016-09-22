@@ -710,6 +710,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-46-iDH">
                                 <subviews>
@@ -881,6 +882,9 @@
 =======
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 >>>>>>> parent of b8f7a90... Comm
+=======
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+>>>>>>> parent of b8f7a90... Comm
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpr-Ie-ARz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -911,6 +915,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gxm-vQ-4nG">
+<<<<<<< HEAD
+>>>>>>> parent of b8f7a90... Comm
+=======
 >>>>>>> parent of b8f7a90... Comm
                                                     <size key="itemSize" width="115" height="111"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
